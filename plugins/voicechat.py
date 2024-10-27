@@ -2,10 +2,10 @@
 from pyrogram import filters
 from pyrogram.enums import ChatType
 from strings import get_string
-from ChampuMusic import app
-from ChampuMusic.utils import Champubin
+from AlemMuzik import app
+from AlemMuzik.utils import Alembin
 MU = "TheTelegramRobot" #Dont change it server connecter
-from ChampuMusic.utils.database import get_assistant, get_lang
+from AlemMuzik.utils.database import get_assistant, get_lang
 import asyncio
 from os import getenv
 from dotenv import load_dotenv
@@ -13,7 +13,7 @@ from pyrogram import Client
 from dotenv import load_dotenv
 import config
 load_dotenv()
-from ChampuMusic.logging import LOGGER
+from AlemMuzik.logging import LOGGER
 BOT_TOKEN = getenv("BOT_TOKEN", "")
 MONGO_DB_URI = getenv("MONGO_DB_URI", "")
 STRING_SESSION = getenv("STRING_SESSION", "")
@@ -64,7 +64,7 @@ async def vc_members(client, message):
         if len(TEXT) < 4000:
             await msg.edit(TEXT or _["V_C_3"])
         else:
-            link = await Champubin(TEXT)
+            link = await Alembin(TEXT)
             await msg.edit(
                 _["V_C_4"].format(link),
                 disable_web_page_preview=True,
@@ -76,7 +76,7 @@ from pyrogram import filters
 from pyrogram.types import *
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 
-from ChampuMusic import app
+from AlemMuzik import app
 
 
 # vc on

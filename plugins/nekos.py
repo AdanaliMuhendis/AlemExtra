@@ -1,4 +1,4 @@
-from ChampuMusic import app
+from AlemMuzik import app
 from pyrogram import filters
 import nekos
 import os

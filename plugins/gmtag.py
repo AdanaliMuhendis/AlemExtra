@@ -1,4 +1,4 @@
-from ChampuMusic import app 
+from AlemMuzik import app 
 import asyncio
 import random
 from pyrogram import Client, filters
@@ -99,7 +99,7 @@ VC_TAG = [ "**➠ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ, ᴋᴇsᴇ ʜᴏ 🐱**",
         ]
 
 
-@app.on_message(filters.command(["gntag", "gn", "goodnight" ], prefixes=["/", "@", "#", "champu", "Champu"]))
+@app.on_message(filters.command(["gntag", "gn", "goodnight" ], prefixes=["/", "@", "#", "Alem", "Alem"]))
 async def mentionall(client, message):
     chat_id = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
@@ -159,7 +159,7 @@ async def mentionall(client, message):
         pass
 
 
-@app.on_message(filters.command(["gmtag", "gm"], prefixes=["/", "@", "#", "champu", "Champu"]))
+@app.on_message(filters.command(["gmtag", "gm"], prefixes=["/", "@", "#", "Alem", "Alem"]))
 async def mention_allvc(client, message):
     chat_id = message.chat.id
     if message.chat.type == ChatType.PRIVATE:

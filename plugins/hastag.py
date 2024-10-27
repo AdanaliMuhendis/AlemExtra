@@ -1,5 +1,5 @@
 from pyrogram import filters
-from ChampuMusic import app
+from AlemMuzik import app
 from TheAPI import api
 
 

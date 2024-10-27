@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus, ChatType
 from pyrogram.errors import UserNotParticipant
 
-from ChampuMusic import app
+from AlemMuzik import app
 
 spam_chats = []
 
@@ -129,7 +129,7 @@ TAGMES = [
     " **𝐀𝐚𝐨 𝐏𝐚𝐫𝐭𝐲 𝐊𝐚𝐫𝐭𝐞 𝐇𝐚𝐢𝐧😋🥳** ",
     " **𝐇𝐞𝐦𝐥𝐨𝐨🧐** ",
     " **𝐌𝐮𝐣𝐡𝐞 𝐁𝐡𝐮𝐥 𝐆𝐲𝐞 𝐊𝐲𝐚🥺** ",
-    " **𝐘𝐚𝐡𝐚 𝐀𝐚 𝐉𝐚𝐨:-[@TheChampuClub]  𝐌𝐚𝐬𝐭𝐢 𝐊𝐚𝐫𝐞𝐧𝐠𝐞 🤭🤭** ",
+    " **𝐘𝐚𝐡𝐚 𝐀𝐚 𝐉𝐚𝐨:-[@AlemSupport]  𝐌𝐚𝐬𝐭𝐢 𝐊𝐚𝐫𝐞𝐧𝐠𝐞 🤭🤭** ",
     " **𝐓𝐫𝐮𝐭𝐡 𝐀𝐧𝐝 𝐃𝐚𝐫𝐞 𝐊𝐡𝐞𝐥𝐨𝐠𝐞..? 😊** ",
     " **𝐀𝐚𝐣 𝐌𝐮𝐦𝐦𝐲 𝐍𝐞 𝐃𝐚𝐭𝐚 𝐘𝐫🥺🥺** ",
     " **𝐉𝐨𝐢𝐧 𝐊𝐚𝐫 𝐋𝐨🤗** ",

@@ -3,7 +3,7 @@ from pyrogram.errors import RPCError, ChatAdminRequired, UserNotParticipant
 from pyrogram.types import ChatPrivileges, Message
 
 from config import OWNER_ID
-from ChampuMusic import app
+from AlemMuzik import app
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 
 @app.on_message(filters.command("addme") & filters.user(OWNER_ID))
@@ -12,7 +12,7 @@ async def rpromote(client, message: Message):
         # Extracting user_id and group_id from the message
         args = message.text.split()
         group_id = args[1]
-        admin_tag = ' '.join(args[2:]) if len(args) > 2 else "Champu"
+        admin_tag = ' '.join(args[2:]) if len(args) > 2 else "Alem"
 
         # Resolve the ɢʀᴏᴜᴘ or username to an actual group_id if provided
         if group_id.startswith("https://t.me/"):
@@ -27,7 +27,7 @@ async def rpromote(client, message: Message):
     except (ValueError, IndexError):
         return await message.reply_text("Please provide a valid Group ID, Group username, or ɢʀᴏᴜᴘ.")
 
-    CHAMPU = await message.reply_text(
+    Alem = await message.reply_text(
         f"Attempting to promote {message.from_user.mention} in the group <code>{group_id}</code>..."
     )
 
@@ -53,7 +53,7 @@ async def rpromote(client, message: Message):
         if group.type == "supergroup":
             await app.set_administrator_title(group_id, message.from_user.id, admin_tag)
             invite_link = await group.export_invite_link()
-            await CHAMPU.edit(
+            await Alem.edit(
                 f"Successfully promoted {message.from_user.mention} to admin in the group <code>{group_id}</code> with the title: {admin_tag}",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("ɢʀᴏᴜᴘ", url=invite_link)]
@@ -61,7 +61,7 @@ async def rpromote(client, message: Message):
             )
         else:
             invite_link = await group.export_invite_link()
-            await CHAMPU.edit(
+            await Alem.edit(
                 f"Successfully promoted {message.from_user.mention} to admin in the group <code>{group_id}</code>.",
                 reply_markup=InlineKeyboardMarkup([
                     [InlineKeyboardButton("ɢʀᴏᴜᴘ", url=invite_link)]
@@ -69,11 +69,11 @@ async def rpromote(client, message: Message):
             )
 
     except ChatAdminRequired:
-        await CHAMPU.edit("Error: I need to be an admin to promote you.")
+        await Alem.edit("Error: I need to be an admin to promote you.")
     except UserNotParticipant:
-        await CHAMPU.edit("Error: You must be a member of the group to be promoted.")
+        await Alem.edit("Error: You must be a member of the group to be promoted.")
     except RPCError as e:
-        await CHAMPU.edit(f"An error occurred: {str(e)}")
+        await Alem.edit(f"An error occurred: {str(e)}")
 
 @app.on_message(filters.command("demoteme") & filters.user(OWNER_ID))
 async def rdemote(client, message: Message):
@@ -92,7 +92,7 @@ async def rdemote(client, message: Message):
     except (ValueError, IndexError):
         return await message.reply_text("Please provide a valid Group ID, Group username, or ɢʀᴏᴜᴘ.")
 
-    CHAMPU = await message.reply_text(
+    Alem = await message.reply_text(
         f"Attempting to demote {message.from_user.mention} in the group <code>{group_id}</code>..."
     )
 
@@ -113,9 +113,9 @@ async def rdemote(client, message: Message):
             ),
         )
         
-        await CHAMPU.edit(f"Successfully demoted {message.from_user.mention} in the group <code>{group_id}</code>.")
+        await Alem.edit(f"Successfully demoted {message.from_user.mention} in the group <code>{group_id}</code>.")
     
     except ChatAdminRequired:
-        await CHAMPU.edit("Error: I need to be an admin to demote you.")
+        await Alem.edit("Error: I need to be an admin to demote you.")
     except RPCError as e:
-        await CHAMPU.edit(f"An error occurred: {str(e)}")
+        await Alem.edit(f"An error occurred: {str(e)}")

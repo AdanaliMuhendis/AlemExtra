@@ -4,7 +4,7 @@ from httpx import AsyncClient, Timeout
 from pyrogram import filters
 from pyrogram.types import Message
 
-from ChampuMusic import app
+from AlemMuzik import app
 
 fetch = AsyncClient(
     http2=True,

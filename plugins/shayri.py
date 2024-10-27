@@ -1,8 +1,8 @@
 import random
-from ChampuMusic.utils.database import get_served_chats
+from AlemMuzik.utils.database import get_served_chats
 from pyrogram import Client, filters
 
-from ChampuMusic import app
+from AlemMuzik import app
 
 # Define a dictionary to track the last message timestamp for each user
 user_last_message_time = {}
@@ -120,7 +120,7 @@ from pyrogram import filters
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import random
 
-from ChampuMusic import app
+from AlemMuzik import app
 
 # Define the scheduler
 scheduler = AsyncIOScheduler(timezone="Asia/Kolkata")

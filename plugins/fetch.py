@@ -1,6 +1,6 @@
 from pyrogram import Client, filters
 import re
-from ChampuMusic import app
+from AlemMuzik import app
 from pyrogram.errors import ChannelBanned, ChannelInvalid, ChannelPrivate, ChatIdInvalid, ChatInvalid
 from pyrogram.enums import MessageMediaType
 import os

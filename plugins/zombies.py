@@ -3,7 +3,7 @@ import asyncio
 from pyrogram import filters
 from pyrogram.enums import ChatMemberStatus
 from pyrogram.errors import FloodWait
-from ChampuMusic import app
+from AlemMuzik import app
 from utils.permissions import adminsOnly
 
 chatQueue = []

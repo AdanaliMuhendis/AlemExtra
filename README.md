@@ -1,24 +1,24 @@
-# Extra Plugins For [ChampuMusic](https://github.com/TheChampu/ChampuMusic)
+# Extra Plugins For [AlemMuzik](https://github.com/AdanaliMuhendis/camp)
 
 
-## Deployment for [ChampuMusic](https://github.com/TheChampu/ChampuMusic)
+## Deployment for [AlemMuzik](https://github.com/AdanaliMuhendis/camp)
 
 #### 🚀 Heroku Deployment
 
 <h4>Click the button below to deploy Music Bot on Heroku!</h4>    
 <h4>If You show any error like failed to app Creation Then fork and deploy </h4>
-<a href="https://dashboard.heroku.com/new?template=https://github.com/TheChampu/ChampuMusic"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-teal?style=for-the-badge&logo=heroku" width="200""/></a>
+<a href="https://dashboard.heroku.com/new?template=https://github.com/AdanaliMuhendis/camp"><img src="https://img.shields.io/badge/Deploy%20To%20Heroku-teal?style=for-the-badge&logo=heroku" width="200""/></a>
 
 
 ### 🖇 VPS Deployment
-- Get your [Necessary Variables](https://github.com/TheChampu/ChampuMusic/blob/master/sample.env)
-- clone repo : `git clone https://github.com/TheChampu/ChampuMusic && cd ChampuMusic`
+- Get your [Necessary Variables](https://github.com/AdanaliMuhendis/camp/blob/master/sample.env)
+- clone repo : `git clone https://github.com/AdanaliMuhendis/camp && cd AlemMuzik`
 - Setup by : `bash setup`
 - Install tmux to keep running your bot when you close the terminal by :
 `sudo apt install tmux && tmux`
 - Finally run the bot by :
-`python3 -m ChampuMusic`
+`python3 -m AlemMuzik`
 - For getting out from tmux session : Press `Ctrl+b` and then `d`<br>
 
 
-# For more help checkout [ChampuMusic](https://github.com/TheChampu/ChampuMusic)
+# For more help checkout [AlemMuzik](https://github.com/AdanaliMuhendis/camp)

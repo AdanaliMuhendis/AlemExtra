@@ -5,9 +5,9 @@ from pyrogram import Client, filters
 from pyrogram.raw.functions.messages import DeleteHistory
 from pyrogram.types import Message
 
-from ChampuMusic import app
-from ChampuMusic.core.userbot import assistants
-from ChampuMusic.utils.database import get_client
+from AlemMuzik import app
+from AlemMuzik.core.userbot import assistants
+from AlemMuzik.utils.database import get_client
 
 
 @app.on_message(filters.command(["sg", "History"]))
@@ -32,8 +32,8 @@ async def sg(client: Client, message: Message):
             return await lol.edit("<code>Please specify a valid user!</code>")
     sgbot = ["sangmata_bot", "sangmata_beta_bot"]
     sg = random.choice(sgbot)
-    CHAMPU = random.choice(assistants)
-    ubot = await get_client(CHAMPU)
+    Alem = random.choice(assistants)
+    ubot = await get_client(Alem)
 
     try:
         a = await ubot.send_message(sg, f"{user.id}")

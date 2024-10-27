@@ -3,7 +3,7 @@ from pyrogram import filters
 from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.util.retry import Retry
 
-from ChampuMusic import app
+from AlemMuzik import app
 
 
 def download_website(url):

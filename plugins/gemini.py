@@ -1,8 +1,8 @@
 import requests
-from ChampuAPI import api
+from AlemAPI import api
 from pyrogram import filters
 from pyrogram.enums import ChatAction
-from ChampuMusic import app
+from AlemMuzik import app
 
 
 @app.on_message(filters.command(["gemini"]))

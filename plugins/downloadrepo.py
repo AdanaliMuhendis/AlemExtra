@@ -4,7 +4,7 @@ import shutil
 import git
 from pyrogram import filters
 
-from ChampuMusic import app
+from AlemMuzik import app
 
 
 @app.on_message(filters.command(["downloadrepo"]))

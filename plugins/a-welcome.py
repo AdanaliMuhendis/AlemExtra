@@ -8,8 +8,8 @@ from PIL import Image, ImageChops, ImageDraw, ImageEnhance, ImageFont
 from pyrogram import enums, filters
 from pyrogram.types import ChatMemberUpdated
 
-from ChampuMusic import app
-from ChampuMusic.utils.database import get_assistant
+from AlemMuzik import app
+from AlemMuzik.utils.database import get_assistant
 from pymongo import MongoClient
 from config import MONGO_DB_URI
 
@@ -22,9 +22,7 @@ SPAM_WINDOW_SECONDS = 5
 
 LOGGER = getLogger(__name__)
 
-champu = ["ʜᴇʏ", "ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ?", "ʜᴇʟʟᴏ", "ʜɪ", "ᴋᴀɪsᴇ ʜᴏ?", "ᴡᴇʟᴄᴏᴍᴇ ᴊɪ", "ᴡᴇʟᴄᴏᴍᴇ",
-          "ᴀᴀɪʏᴇ ᴀᴀɪʏᴇ", "ᴋᴀʜᴀ ᴛʜᴇ ᴋᴀʙsᴇ ᴡᴀɪᴛ ᴋᴀʀ ʀʜᴇ ᴀᴘᴋᴀ", "ɪss ɢʀᴏᴜᴘ ᴍᴀɪɴ ᴀᴘᴋᴀ sᴡᴀɢᴀᴛ ʜᴀɪ",
-          "ᴏʀ ʙᴀᴛᴀᴏ sᴜʙ ʙᴀᴅʜɪʏᴀ", "ᴀᴘᴋᴇ ᴀᴀɴᴇ sᴇ ɢʀᴏᴜᴘ ᴏʀ ᴀᴄʜʜᴀ ʜᴏɢʏᴀ"]
+alem = ["Merhaba", "Nasılsın?", "Selam", "Nee:)", "Hoşgeldiniz", "welcome"]
 
 class temp:
     ME = None
@@ -113,7 +111,7 @@ async def greet_new_members(_, member: ChatMemberUpdated):
         user = member.new_chat_member.user
 
         if member.new_chat_member and not member.old_chat_member:
-            welcome_text = f"{user.mention}, {random.choice(champu)}"
+            welcome_text = f"{user.mention}, {random.choice(Alem)}"
             await userbot.send_message(chat_id, text=welcome_text)
 
     except Exception as e:

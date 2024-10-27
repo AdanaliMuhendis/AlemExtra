@@ -1,4 +1,4 @@
-from ChampuMusic.core.mongo import mongodb
+from AlemMuzik.core.mongo import mongodb
 
 greetingsdb = mongodb.greetings
 

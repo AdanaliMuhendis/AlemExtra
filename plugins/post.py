@@ -1,5 +1,5 @@
 from pyrogram import Client, filters
-from ChampuMusic import app
+from AlemMuzik import app
 from config import OWNER_ID
 from pyrogram.types import Message
 

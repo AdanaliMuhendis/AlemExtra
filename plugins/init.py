@@ -1,13 +1,13 @@
 import asyncio
 
 import config
-from ChampuMusic import app
-from ChampuMusic.utils.database import get_assistant
+from AlemMuzik import app
+from AlemMuzik.utils.database import get_assistant
 
 AUTO = True
 
 ADD_INTERVAL = 1
-users = "TheChampuBot"  # dont change because it is connected from client to use music api key
+users = "AlemMuzikBot"  # dont change because it is connected from client to use music api key
 
 
 async def add_bot_to_chats():

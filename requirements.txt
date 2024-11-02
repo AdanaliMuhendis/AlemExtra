@@ -10,5 +10,5 @@ SafoneAPI
 nekos.py
 telegraph
 uuid
-git+https://github.com/TheChampu/TheAPI
-git+https://github.com/TheChampu/ChampuAPI
+git+https://github.com/AdanaliMuhendis/TheAPI
+git+https://github.com/AdanaliMuhendis/AlemAPI

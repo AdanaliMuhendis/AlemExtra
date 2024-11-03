@@ -71,7 +71,7 @@ async def auto_state(_, message):
         user_command_count[user_id] = 1
         user_last_message_time[user_id] = current_time
 
-    usage = "**ᴜsᴀɢᴇ:**\n**⦿ /awelcome [on|off]**"
+    usage = "**Kullanım:**\n**⦿ /awelcome [on|off]**"
     if len(message.command) == 1:
         return await message.reply_text(usage)
 

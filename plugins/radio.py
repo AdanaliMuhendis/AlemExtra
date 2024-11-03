@@ -30,6 +30,7 @@ RADIO_STATION = {
     "๏ ʙᴀʙᴀ ʀᴀᴅʏᴏ ๏": "https://edge1.radyotvonline.net/shoutcast/play/babaradyo?/;stream.mp3",
     "๏ ᴇғᴋᴀʀ ғᴍ ๏": "https://playerservices.streamtheworld.com/api/livestream-redirect//SC008_SO1AAC.aac?/;stream.mp3",
     "๏ sᴇʏᴍᴇɴ ๏": "https://yayin.radyoseymen.com.tr:1070/stream?/;stream.mp3",
+    "๏ sᴇsɪ̇ɴɪ̇ᴢ ғᴍ ๏": "https://kesintisizyayin.com:1656/stream?type=http&nocache=4",
     "๏ sᴘᴏʀ ๏": "https://moondigitaledge.radyotvonline.net/radyospor/playlist.m3u8",
 }
 

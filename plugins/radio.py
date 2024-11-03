@@ -20,15 +20,17 @@ from AlemMuzik.misc import SUDOERS
 
 # Radio Station List
 RADIO_STATION = {
-    "ᴀɪʀ ʙɪʟᴀsᴘᴜʀ": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio110/playlist.m3u8",
-    "ᴀɪʀ ʀᴀɪᴘᴜʀ": "http://air.pc.cdn.bitgravity.com/air/live/pbaudio118/playlist.m3u8",
-    "ᴄᴀᴘɪᴛᴀʟ ꜰᴍ": "http://media-ice.musicradio.com/CapitalMP3?.mp3&listening-from-radio-garden=1616312105154",
-    "ᴇɴɢʟɪsʜ": "https://hls-01-regions.emgsound.ru/11_msk/playlist.m3u8",
-    "ᴍɪʀᴄʜɪ": "http://peridot.streamguys.com:7150/Mirchi",
-    "ʀᴀᴅɪᴏ ᴛᴏᴅᴀʏ": "http://stream.zenolive.com/8wv4d8g4344tv",
-    "ʏᴏᴜᴛᴜʙᴇ": "https://www.youtube.com/live/eu191hR_LEc?si=T-9QYD548jd0Mogp",
-    "ᴢᴇᴇ ɴᴇᴡs": "https://www.youtube.com/live/TPcmrPrygDc?si=hiHBkIidgurQAd1P",
-    "Chill out": "https://www.youtube.com/live/36YnV9STBqc",
+    "๏ 𝐀𝐋𝐄𝐌 ๏": "https://edge1.radyotvonline.net/shoutcast/play/alemfm",
+    "๏ ɢᴇɴᴄ̧ ᴛᴜ̈ʀᴋ ๏": "https://stream.zeno.fm/0mhfv2bgkf9uv/stream",
+    "๏ ʀᴀᴅʏᴏ𝟽 ๏": "https://moondigitaledge2.radyotvonline.net/radyo7arabesk/playlist.m3u8",
+    "๏ ᴘᴏᴡᴇʀ ᴛᴜ̈ʀᴋ ๏": "https://listen.powerapp.com.tr/powerturk2/abr/playlist.m3u8",
+    "๏ sʟᴏᴡ ᴛᴜ̈ʀᴋ ๏": "https://radyo.duhnet.tv/ak_dtvh_slowturk",
+    "๏ ᴋʀᴀʟ ғᴍ ๏": "https://dygedge2.radyotvonline.net/kralfm/playlist.m3u8",
+    "๏ ɴᴜᴍʙᴇʀ𝟷 ᴛᴜ̈ʀᴋ ๏": "https://n10101m.mediatriple.net/videoonlylive/mtkgeuihrlfwlive/u_stream_5c9e30cf8d28e_1/playlist.m3u8",
+    "๏ ʙᴀʙᴀ ʀᴀᴅʏᴏ ๏": "https://edge1.radyotvonline.net/shoutcast/play/babaradyo?/;stream.mp3",
+    "๏ ᴇғᴋᴀʀ ғᴍ ๏": "https://playerservices.streamtheworld.com/api/livestream-redirect//SC008_SO1AAC.aac?/;stream.mp3",
+    "๏ sᴇʏᴍᴇɴ ๏": "https://yayin.radyoseymen.com.tr:1070/stream?/;stream.mp3",
+    "๏ sᴘᴏʀ ๏": "https://moondigitaledge.radyotvonline.net/radyospor/playlist.m3u8",
 }
 
 

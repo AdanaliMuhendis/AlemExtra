@@ -22,7 +22,7 @@ SPAM_WINDOW_SECONDS = 5
 
 LOGGER = getLogger(__name__)
 
-alem = ["Merhaba", "Nasılsın?", "Selam", "Nee:)", "Hoşgeldiniz", "welcome"]
+alem = ["Merhaba", "Nasılsın?", "Selam", "Hoşgeldiniz", "welcome"]
 
 class temp:
     ME = None
@@ -62,7 +62,7 @@ async def auto_state(_, message):
         user_command_count[user_id] = user_command_count.get(user_id, 0) + 1
         if user_command_count[user_id] > SPAM_THRESHOLD:
             hu = await message.reply_text(
-                f"**{message.from_user.mention} ᴘʟᴇᴀsᴇ ᴅᴏɴᴛ ᴅᴏ sᴘᴀᴍ, ᴀɴᴅ ᴛʀʏ ᴀɢᴀɪɴ ᴀғᴛᴇʀ 5 sᴇᴄ**"
+                f"**{message.from_user.mention} Lütfen Spam'a Sebep Olma, 5 sn Sonra Tekrar Dene ..!**"
             )
             await asyncio.sleep(3)
             await hu.delete()
@@ -83,20 +83,20 @@ async def auto_state(_, message):
 
         if state == "off":
             if current_status == "off":
-                await message.reply_text("** ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ᴀʟʀᴇᴀᴅʏ ᴅɪsᴀʙʟᴇᴅ!**")
+                await message.reply_text("** Hoş Geldin Bildirimleri Devre Dışı!**")
             else:
                 await set_awelcome_status(chat_id, "off")
-                await message.reply_text(f"**ᴅɪsᴀʙʟᴇᴅ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɪɴ** {message.chat.title} **ʙʏ ᴀssɪsᴛᴀɴᴛ**")
+                await message.reply_text(f"**Hoş Geldin Bildirimleri Devre Dışı!** {message.chat.title} **Asistan Tarafından**")
         elif state == "on":
             if current_status == "on":
-                await message.reply_text("**ᴇɴᴀʙʟᴇᴅ ᴀssɪsᴛᴀɴᴛ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ᴀʟʀᴇᴀᴅʏ!**")
+                await message.reply_text("**Hoş Geldin Bildirimleri Devreye Alındı!**")
             else:
                 await set_awelcome_status(chat_id, "on")
-                await message.reply_text(f"**ᴇɴᴀʙʟᴇᴅ ᴀssɪsᴛᴀɴᴛ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ ɪɴ** {message.chat.title}")
+                await message.reply_text(f"**Hoş Geldin Bildirimleri Devreye Alındı!** {message.chat.title}")
         else:
             await message.reply_text(usage)
     else:
-        await message.reply("**sᴏʀʀʏ ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴇɴᴀʙʟᴇ ᴀssɪsᴛᴀɴᴛ ᴡᴇʟᴄᴏᴍᴇ ɴᴏᴛɪғɪᴄᴀᴛɪᴏɴ!**")
+        await message.reply("**Asistanın Hoş Geldin Mesajını Sadece Adminler Aktif Edebilir!**")
 
 # Auto-welcome message for new members
 @app.on_chat_member_updated(filters.group, group=5)

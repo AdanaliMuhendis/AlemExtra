@@ -42,7 +42,7 @@ async def check_admin_rights(client, message: Message):
             return True
     except UserNotParticipant:
         pass
-    await message.reply("**You are not an admin.**")
+    await message.reply("**Yönetici Değilsin!**")
     return False
 
 
@@ -67,7 +67,7 @@ async def set_flood_limit(client, message: Message):
     command_args = message.command[1:]
     
     if len(command_args) == 0:
-        await message.reply("Please provide a flood limit or 'off'.")
+        await message.reply("Lütfen Bir flood Süresi belirleyin yada 'off'.")
         return
     
     flood_limit = command_args[0].lower()
@@ -81,7 +81,7 @@ async def set_flood_limit(client, message: Message):
             update_chat_flood_settings(chat_id, {"flood_limit": flood_limit})
             await message.reply(f"Flood limit set to {flood_limit} consecutive messages.")
         except ValueError:
-            await message.reply("Invalid flood limit. Please provide a valid number or 'off'.")
+            await message.reply("Flood süre hatası. Lütfen Flood Süresi Ayarlayın Yada 'off'.")
 
 @app.on_message(filters.command("setfloodtimer"))
 async def set_flood_timer(client, message: Message):
@@ -96,7 +96,7 @@ async def set_flood_timer(client, message: Message):
         return
 
     if len(command_args) != 2:
-        await message.reply("Please provide both message count and duration in seconds.")
+        await message.reply("Lütfen Mesaj Sayısını ve Saniye Cinsinden Süreyi Belirleyin!")
         return
     
     try:
@@ -105,7 +105,7 @@ async def set_flood_timer(client, message: Message):
         update_chat_flood_settings(chat_id, {"flood_timer": duration, "flood_limit": count})
         await message.reply(f"Flood timer set to {count} messages in {duration} seconds.")
     except ValueError:
-        await message.reply("Invalid timer settings. Please provide a valid number.")
+        await message.reply("Flood süre hatası. Lütfen Flood Süresi Ayarlayın!")
 
 @app.on_message(filters.command("floodmode"))
 async def set_flood_mode(client, message: Message):
@@ -115,16 +115,16 @@ async def set_flood_mode(client, message: Message):
     command_args = message.command[1:]
     
     if len(command_args) == 0:
-        await message.reply("Please provide a valid action (ban/mute/kick/tban/tmute).")
+        await message.reply("Lütfen Geçerli Bir Eylem Belirtin (ban/mute/kick/tban/tmute).")
         return
     
     action = command_args[0].lower()
     if action not in ["ban", "mute", "kick", "tban", "tmute"]:
-        await message.reply("Invalid action. Choose from ban/mute/kick/tban/tmute.")
+        await message.reply("Geçersiz Eylem. Seçenekler: ban/mute/kick/tban/tmute.")
         return
     
     update_chat_flood_settings(chat_id, {"flood_action": action})
-    await message.reply(f"Flood action set to {action}.")
+    await message.reply(f"Flood Eylem Ayarları {action}.")
 
 @app.on_message(filters.command("clearflood"))
 async def set_flood_clear(client, message: Message):
@@ -134,12 +134,12 @@ async def set_flood_clear(client, message: Message):
     command_args = message.command[1:]
     
     if len(command_args) == 0 or command_args[0].lower() not in ["yes", "no", "on", "off"]:
-        await message.reply("Please choose either 'yes' or 'no'.")
+        await message.reply("Lüten Seçiniz 'yes' veya 'no'.")
         return
     
     delete_flood = command_args[0].lower() in ["yes", "on"]
     update_chat_flood_settings(chat_id, {"delete_flood": delete_flood})
-    await message.reply(f"Delete flood messages set to {delete_flood}.")
+    await message.reply(f"Flood Mesaj Arlarını Sil {delete_flood}.")
 
 flood_count = {}
 
@@ -231,7 +231,7 @@ async def take_flood_action(client, message, action):
         except UserAdminInvalid:
             return
 
-    await message.reply(f"**User {user_first_name} was {action}ed for flooding.**", reply_markup=buttons)
+    await message.reply(f"**Kullanıcı {user_first_name} :) {action} Flood Sebebiyle.**", reply_markup=buttons)
 
 
 
@@ -243,8 +243,8 @@ async def callback_handler(client: Client, callback_query: CallbackQuery):
         permission = "can_restrict_members"
         if permission not in permissions:
             return await callback_query.answer(
-            "ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴇɴᴏᴜɢʜ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ᴘᴇʀғᴏʀᴍ ᴛʜɪs ᴀᴄᴛɪᴏɴ\n"
-            + f"ᴘᴇʀᴍɪssɪᴏɴ ɴᴇᴇᴅᴇᴅ: {permission}",
+            "Bu Eylemi Gerçekleştirmek İçin Yeterli İzinlere Sahip Değilsiniz! \n"
+            + f"Gerekli İzinler: {permission}",
             show_alert=True,
         )
     except UserNotParticipant:

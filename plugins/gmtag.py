@@ -48,54 +48,54 @@ EMOJI = [ "🦋🦋🦋🦋🦋",
           " 🥬🍉🧁🧇",
         ]
 
-TAGMES = [ " **➠ ɢᴏᴏᴅ ɴɪɢʜᴛ 🌚** ",
-           " **➠ ᴄʜᴜᴘ ᴄʜᴀᴘ sᴏ ᴊᴀ 🙊** ",
-           " **➠ ᴘʜᴏɴᴇ ʀᴀᴋʜ ᴋᴀʀ sᴏ ᴊᴀ, ɴᴀʜɪ ᴛᴏ ʙʜᴏᴏᴛ ᴀᴀ ᴊᴀʏᴇɢᴀ..👻** ",
-           " **➠ ᴀᴡᴇᴇ ʙᴀʙᴜ sᴏɴᴀ ᴅɪɴ ᴍᴇɪɴ ᴋᴀʀ ʟᴇɴᴀ ᴀʙʜɪ sᴏ ᴊᴀᴏ..?? 🥲** ",
-           " **➠ ᴍᴜᴍᴍʏ ᴅᴇᴋʜᴏ ʏᴇ ᴀᴘɴᴇ ɢғ sᴇ ʙᴀᴀᴛ ᴋʀ ʀʜᴀ ʜ ʀᴀᴊᴀɪ ᴍᴇ ɢʜᴜs ᴋᴀʀ, sᴏ ɴᴀʜɪ ʀᴀʜᴀ 😜** ",
-           " **➠ ᴘᴀᴘᴀ ʏᴇ ᴅᴇᴋʜᴏ ᴀᴘɴᴇ ʙᴇᴛᴇ ᴋᴏ ʀᴀᴀᴛ ʙʜᴀʀ ᴘʜᴏɴᴇ ᴄʜᴀʟᴀ ʀʜᴀ ʜᴀɪ 🤭** ",
-           " **➠ ɢɴ sᴅ ᴛᴄ.. 🙂** ",
-           " **➠ ɢᴏᴏᴅ ɴɪɢʜᴛ sᴡᴇᴇᴛ ᴅʀᴇᴀᴍ ᴛᴀᴋᴇ ᴄᴀʀᴇ..?? ✨** ",
-           " **➠ ʀᴀᴀᴛ ʙʜᴜᴛ ʜᴏ ɢʏɪ ʜᴀɪ sᴏ ᴊᴀᴏ, ɢɴ..?? 🌌** ",
-           " **➠ ᴍᴜᴍᴍʏ ᴅᴇᴋʜᴏ 11 ʙᴀᴊɴᴇ ᴡᴀʟᴇ ʜᴀɪ ʏᴇ ᴀʙʜɪ ᴛᴀᴋ ᴘʜᴏɴᴇ ᴄʜᴀʟᴀ ʀʜᴀ ɴᴀʜɪ sᴏ ɴᴀʜɪ ʀʜᴀ 🕦** ",
-           " **➠ ᴋᴀʟ sᴜʙʜᴀ sᴄʜᴏᴏʟ ɴᴀʜɪ ᴊᴀɴᴀ ᴋʏᴀ, ᴊᴏ ᴀʙʜɪ ᴛᴀᴋ ᴊᴀɢ ʀʜᴇ ʜᴏ 🏫** ",
-           " **➠ ʙᴀʙᴜ, ɢᴏᴏᴅ ɴɪɢʜᴛ sᴅ ᴛᴄ..?? 😊** ",
-           " **➠ ᴀᴀᴊ ʙʜᴜᴛ ᴛʜᴀɴᴅ ʜᴀɪ, ᴀᴀʀᴀᴍ sᴇ ᴊᴀʟᴅɪ sᴏ ᴊᴀᴛɪ ʜᴏᴏɴ 🌼** ",
-           " **➠  ɢᴏᴏᴅ ɴɪɢʜᴛ 🌷** ",
-           " **➠ ᴍᴇ ᴊᴀ ʀᴀʜɪ sᴏɴᴇ, ɢɴ sᴅ ᴛᴄ 🏵️** ",
-           " **➠ ʜᴇʟʟᴏ ᴊɪ ɴᴀᴍᴀsᴛᴇ, ɢᴏᴏᴅ ɴɪɢʜᴛ 🍃** ",
-           " **➠ ʜᴇʏ, ᴋᴋʀʜ..? sᴏɴᴀ ɴᴀʜɪ ʜᴀɪ ᴋʏᴀ ☃️** ",
-           " **➠ ɢᴏᴏᴅ ɴɪɢʜᴛ ᴊɪ, ʙʜᴜᴛ ʀᴀᴀᴛ ʜᴏ ɢʏɪ..? ⛄** ",
-           " **➠ ᴍᴇ ᴊᴀ ʀᴀʜɪ ʀᴏɴᴇ, ɪ ᴍᴇᴀɴ sᴏɴᴇ ɢᴏᴏᴅ ɴɪɢʜᴛ ᴊɪ 😁** ",
-           " **➠ ᴍᴀᴄʜʜᴀʟɪ ᴋᴏ ᴋᴇʜᴛᴇ ʜᴀɪ ғɪsʜ, ɢᴏᴏᴅ ɴɪɢʜᴛ ᴅᴇᴀʀ ᴍᴀᴛ ᴋʀɴᴀ ᴍɪss, ᴊᴀ ʀʜɪ sᴏɴᴇ 🌄** ",
-           " **➠ ɢᴏᴏᴅ ɴɪɢʜᴛ ʙʀɪɢʜᴛғᴜʟʟ ɴɪɢʜᴛ 🤭** ",
-           " **➠ ᴛʜᴇ ɴɪɢʜᴛ ʜᴀs ғᴀʟʟᴇɴ, ᴛʜᴇ ᴅᴀʏ ɪs ᴅᴏɴᴇ,, ᴛʜᴇ ᴍᴏᴏɴ ʜᴀs ᴛᴀᴋᴇɴ ᴛʜᴇ ᴘʟᴀᴄᴇ ᴏғ ᴛʜᴇ sᴜɴ... 😊** ",
-           " **➠ ᴍᴀʏ ᴀʟʟ ʏᴏᴜʀ ᴅʀᴇᴀᴍs ᴄᴏᴍᴇ ᴛʀᴜᴇ ❤️** ",
-           " **➠ ɢᴏᴏᴅ ɴɪɢʜᴛ sᴘʀɪɴᴋʟᴇs sᴡᴇᴇᴛ ᴅʀᴇᴀᴍ 💚** ",
-           " **➠ ɢᴏᴏᴅ ɴɪɢʜᴛ, ɴɪɴᴅ ᴀᴀ ʀʜɪ ʜᴀɪ 🥱** ",
-           " **➠ ᴅᴇᴀʀ ғʀɪᴇɴᴅ ɢᴏᴏᴅ ɴɪɢʜᴛ 💤** ",
-           " **➠ ɪᴛɴɪ ʀᴀᴀᴛ ᴍᴇ ᴊᴀɢ ᴋᴀʀ ᴋʏᴀ ᴋᴀʀ ʀʜᴇ ʜᴏ sᴏɴᴀ ɴᴀʜɪ ʜᴀɪ ᴋʏᴀ 😜** ",
-           " **➠ ᴄʟᴏsᴇ ʏᴏᴜʀ ᴇʏᴇs sɴᴜɢɢʟᴇ ᴜᴘ ᴛɪɢʜᴛ,, ᴀɴᴅ ʀᴇᴍᴇᴍʙᴇʀ ᴛʜᴀᴛ ᴀɴɢᴇʟs, ᴡɪʟʟ ᴡᴀᴛᴄʜ ᴏᴠᴇʀ ʏᴏᴜ ᴛᴏɴɪɢʜᴛ... 💫** ",
-           ]
+TAGMES = [ " **➠ İYİ GECELER.. 🌚** ",
+           " **➠ SESSİZCE UYU… 🙊** ",
+           " **➠ TELEFONUNU BIRAK VE UYU, YOKSA HAYALET GELECEK…👻** ",
+           " **➠ GÜNDÜZ DE UYU GECE DE UYU TEMBEL… 🥲** ",
+           " **➠ ANNE!  BAK ŞUNA, YORGANIN ALTINDA SEVGİLİSİ İLE KONUŞUYOR… 😜** ",
+           " **➠ BABA!  BÜTÜN GECE KARDEŞİMİN TELEFON KONUŞMLARINA BAK…🤭** ",
+           " **➠ ÜZEMEZ KİMSE SENİ... 🙂** ",
+           " **➠ İYİ GECELER TATLI RÜYALAR KENDİNE İYİ BAK..? ✨** ",
+           " **➠ ARTIK ÇOK GEÇ OLDU GİT UYU... 🌌** ",
+           " **➠ ANNE! BAK ŞUNA SAAT 23:00 OLDU HALA UYUMUYOR, TELEFONLA OYNUYOR…🕦** ",
+           " **➠ YARIN SABAH OKULA GİTMEK İSTEMİYOR MUSUN? HALA UYANIK MISIN?... 🏫** ",
+           " **➠ BİRADERİM, İYİ GECELER..? 😊** ",
+           " **➠ BU GÜN HAVA ÇOK SOĞUK, KENDİMİ RAHAT HİSSEDİYORUM VE HEMEN YATIYORUM… 🌼** ",
+           " **➠  İYİ GECELER… 🌷** ",
+           " **➠ HUZURLU UYUYACAĞIM… 🏵️** ",
+           " **➠ MERHABA EFENDİM, İYİ GECELER… 🍃** ",
+           " **➠ HEY? UNUTMA YILDIZLAR DA KAYAR BİR GÜN… ☃️** ",
+           " **➠ İYİGECELER BEBEĞİM, SAAT ÇOK GEÇ OLDU... ⛄** ",
+           " **➠ AĞLAYACAĞIM EFENDİM, YANİ AĞLAYARAK UYUYACAĞIM SENDE AĞLA… 😁** ",
+           " **➠ BALIĞA BALIK DENİR, GÜLLER KIRMIZI, MENEKŞELER MOR, NEYSE İYİ GECELER BAYAN …🌄** ",
+           " **➠ İYİ GECELER, GECEN GÜZEL OLSUN… 🤭** ",
+           " **➠ GECE OLDU, GÜN BİTTİ, GÜNEŞİN YERİNİ AY ALDI...(seni alan olmadı hayırlı geceler) 😊** ",
+           " **➠ TÜM HAYALLERİNİZ GERÇEK OLSUN… ❤️** ",
+           " **➠ İYİ GECELER TATLI RÜYALAR OLSUN… 💚** ",
+           " **➠ İYİ GECELER, ÇOK UYKUM VAR… 🥱** ",
+           " **➠ GÜZEL ARKADAŞIM, İYİ GECELER… 💤** ",
+           " **➠ GECENİN GEÇ SAATLERİNE KADAR UYANIK KALARAK NE YAPIYORSUN, UYUMAK İSTEMİYOR MUSUN… 😜** ",
+           " **➠ GÖZLERİNİZİ KAPATIN, SIMSIKI SARILIN VE UNUTMAYIN Kİ GECE BOYUNCA MELEKLER SİZİ İZLEYECEK VE KORUYACAK... 💫** ",
+        ]
 
-VC_TAG = [ "**➠ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ, ᴋᴇsᴇ ʜᴏ 🐱**",
-         "**➠ ɢᴍ, sᴜʙʜᴀ ʜᴏ ɢʏɪ ᴜᴛʜɴᴀ ɴᴀʜɪ ʜᴀɪ ᴋʏᴀ 🌤️**",
-         "**➠ ɢᴍ ʙᴀʙʏ, ᴄʜᴀɪ ᴘɪ ʟᴏ ☕**",
-         "**➠ ᴊᴀʟᴅɪ ᴜᴛʜᴏ, sᴄʜᴏᴏʟ ɴᴀʜɪ ᴊᴀɴᴀ ᴋʏᴀ 🏫**",
-         "**➠ ɢᴍ, ᴄʜᴜᴘ ᴄʜᴀᴘ ʙɪsᴛᴇʀ sᴇ ᴜᴛʜᴏ ᴠʀɴᴀ ᴘᴀɴɪ ᴅᴀʟ ᴅᴜɴɢɪ 🧊**",
-         "**➠ ʙᴀʙʏ ᴜᴛʜᴏ ᴀᴜʀ ᴊᴀʟᴅɪ ғʀᴇsʜ ʜᴏ ᴊᴀᴏ, ɴᴀsᴛᴀ ʀᴇᴀᴅʏ ʜᴀɪ 🫕**",
-         "**➠ ᴏғғɪᴄᴇ ɴᴀʜɪ ᴊᴀɴᴀ ᴋʏᴀ ᴊɪ ᴀᴀᴊ, ᴀʙʜɪ ᴛᴀᴋ ᴜᴛʜᴇ ɴᴀʜɪ 🏣**",
-         "**➠ ɢᴍ ᴅᴏsᴛ, ᴄᴏғғᴇᴇ/ᴛᴇᴀ ᴋʏᴀ ʟᴏɢᴇ ☕🍵**",
-         "**➠ ʙᴀʙʏ 8 ʙᴀᴊɴᴇ ᴡᴀʟᴇ ʜᴀɪ, ᴀᴜʀ ᴛᴜᴍ ᴀʙʜɪ ᴛᴋ ᴜᴛʜᴇ ɴᴀʜɪ 🕖**",
-         "**➠ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ʜᴀᴠᴇ ᴀ ɴɪᴄᴇ ᴅᴀʏ... 🌄**",
-         "**➠ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ, ʜᴀᴠᴇ ᴀ ɢᴏᴏᴅ ᴅᴀʏ... 🪴**",
-         "**➠ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ, ʜᴏᴡ ᴀʀᴇ ʏᴏᴜ ʙᴀʙʏ 😇**",
-         "**➠ ᴍᴜᴍᴍʏ ᴅᴇᴋʜᴏ ʏᴇ ɴᴀʟᴀʏᴋ ᴀʙʜɪ ᴛᴀᴋ sᴏ ʀʜᴀ ʜᴀɪ... 😵‍💫**",
-         "**➠ ʀᴀᴀᴛ ʙʜᴀʀ ʙᴀʙᴜ sᴏɴᴀ ᴋʀ ʀʜᴇ ᴛʜᴇ ᴋʏᴀ, ᴊᴏ ᴀʙʜɪ ᴛᴋ sᴏ ʀʜᴇ ʜᴏ ᴜᴛʜɴᴀ ɴᴀʜɪ ʜᴀɪ ᴋʏᴀ... 😏**",
-         "**➠ ʙᴀʙᴜ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ᴜᴛʜ ᴊᴀᴏ ᴀᴜʀ ɢʀᴏᴜᴘ ᴍᴇ sᴀʙ ғʀɪᴇɴᴅs ᴋᴏ ɢᴍ ᴡɪsʜ ᴋʀᴏ... 🌟**",
-         "**➠ ᴘᴀᴘᴀ ʏᴇ ᴀʙʜɪ ᴛᴀᴋ ᴜᴛʜ ɴᴀʜɪ, sᴄʜᴏᴏʟ ᴋᴀ ᴛɪᴍᴇ ɴɪᴋᴀʟᴛᴀ ᴊᴀ ʀʜᴀ ʜᴀɪ... 🥲**",
-         "**➠ ᴊᴀɴᴇᴍᴀɴ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ, ᴋʏᴀ ᴋʀ ʀʜᴇ ʜᴏ ... 😅**",
-         "**➠ ɢᴍ ʙᴇᴀsᴛɪᴇ, ʙʀᴇᴀᴋғᴀsᴛ ʜᴜᴀ ᴋʏᴀ... 🍳**",
+VC_TAG = [ "**➠ GÜNAYDIN, NASILSIN?.. 🐱**",
+         "**➠ GÜNAYDIN, SABAH OLDU KALKMAN GEREKMİYOR MU?.. 🌤️**",
+         "**➠ GÜNAYDIN BEBEĞİM, ÇAY İÇ ALSANAĞĞĞ ☕**",
+         "**➠ ERKEN KALK, OKULA\İŞE GİTMİYOR MUSUN?.. 🏫**",
+         "**➠ GÜNAYDIN, SESSİZCE YATAKTAN KALK YOKSA SU DÖKECEĞİM… 🧊**",
+         "**➠ BEBEĞİM UYAN VE TAZELEN, KAHVALTI HAZIR 🫕**",
+         "**➠ NEDEN İŞE GİTMEK İSTEMİYORSUN BU GÜN… 🏣**",
+         "**➠ GÜNAYDIN, NE İSTERSİN ÇAY\KAHVE… ☕🍵**",
+         "**➠ BEBEĞİM SAAT 8 VE SEN HALA UYANMADIN MI? 🕖**",
+         "**➠ GÜNAYDIN, GÜZEL BİR GÜN GEÇİRMENİZ DİLEĞİYLE... 🌄**",
+         "**➠ GÜNAYDIN, İYİ BİR GÜN GEÇİRMENİZ DİLEĞİYLE... 🪴**",
+         "**➠ GÜNAYDIN, NASILSIN BEBEĞİM… 😇**",
+         "**➠ ANNE! BAK BU DEĞERSİZ İNSAN HALA UYUYOR... 😵‍💫**",
+         "**➠ DOSTUM BÜTÜN GECE UYUYOR MUYDUN? HALA UYUYORSUN, KALKMAK İSTEMİYOR MUSUN 😏**",
+         "**➠ ÇİÇEĞİM GÜNAYDIN, KALK VE GRUPTAKİ BÜTÜN ARKADAŞLARINA İYİ DİLEKLER SÖYLE 🌟**",
+         "**➠ BABA! HALA UYANMADI, OKUL VAKTİ YAKLAŞIYOR... 🥲**",
+         "**➠ GÜNAYDIN TATLIM, NE YAPIYORSUN... 😅**",
+         "**➠ GÜNAYDIN, BENİM BEST FRİENDİMİN KAHVALTISI NEREDEĞĞĞ 🍳**",
         ]
 
 
@@ -103,7 +103,7 @@ VC_TAG = [ "**➠ ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ, ᴋᴇsᴇ ʜᴏ 🐱**",
 async def mentionall(client, message):
     chat_id = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
-        return await message.reply("๏ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ғᴏʀ ɢʀᴏᴜᴘs.")
+        return await message.reply("๏ BU KOMUTLAR SADECE GRUP İÇERİSİNDE KULLANILABİLİR.")
 
     is_admin = False
     try:
@@ -117,10 +117,10 @@ async def mentionall(client, message):
         ):
             is_admin = True
     if not is_admin:
-        return await message.reply("๏ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ʙᴀʙʏ, ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴛᴀɢ ᴍᴇᴍʙᴇʀs. ")
+        return await message.reply("๏ YÖNETİCİ DEĞİLSİNİZ BEBEĞİM, SADECE YÖNETİCİLER ÜYELERİ ETİKETLEYEBİLİR. ")
 
     if message.reply_to_message and message.text:
-        return await message.reply("/tagall ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ᴛʏᴘᴇ ʟɪᴋᴇ ᴛʜɪs / ʀᴇᴘʟʏ ᴀɴʏ ᴍᴇssᴀɢᴇ ɴᴇxᴛ ᴛɪᴍᴇ ʙᴏᴛ ᴛᴀɢɢɪɴɢ...")
+        return await message.reply("/tagall YAZDIKTAN SONRA MESAJINIZI YAZINIZ YADA MESAJINIZI YANITLAYARAK TAG YAPABİLİRSİNİZ...")
     elif message.text:
         mode = "text_on_cmd"
         msg = message.text
@@ -128,11 +128,11 @@ async def mentionall(client, message):
         mode = "text_on_reply"
         msg = message.reply_to_message
         if not msg:
-            return await message.reply("/tagall ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ᴛʏᴘᴇ ʟɪᴋᴇ ᴛʜɪs / ʀᴇᴘʟʏ ᴀɴʏ ᴍᴇssᴀɢᴇ ɴᴇxᴛ ᴛɪᴍᴇ ғᴏᴛ ᴛᴀɢɢɪɴɢ...")
+            return await message.reply("/tagall YAZDIKTAN SONRA MESAJINIZI YAZINIZ YADA MESAJINIZI YANITLAYARAK TAG YAPABİLİRSİNİZ...")
     else:
-        return await message.reply("/tagall ɢᴏᴏᴅ ᴍᴏʀɴɪɴɢ ᴛʏᴘᴇ ʟɪᴋᴇ ᴛʜɪs / ʀᴇᴘʟʏ ᴀɴʏ ᴍᴇssᴀɢᴇ ɴᴇxᴛ ᴛɪᴍᴇ ʙᴏᴛ ᴛᴀɢɢɪɴɢ...")
+        return await message.reply("/tagall YAZDIKTAN SONRA MESAJINIZI YAZINIZ YADA MESAJINIZI YANITLAYARAK TAG YAPABİLİRSİNİZ...")
     if chat_id in spam_chats:
-        return await message.reply("๏ ᴘʟᴇᴀsᴇ ᴀᴛ ғɪʀsᴛ sᴛᴏᴘ ʀᴜɴɴɪɴɢ ᴍᴇɴᴛɪᴏɴ ᴘʀᴏᴄᴇss...")
+        return await message.reply("๏ LÜTFEN İLK ÖNCE ÇALIŞAN İŞLEMİ DURDURUN...")
     spam_chats.append(chat_id)
     usrnum = 0
     usrtxt = ""
@@ -177,9 +177,9 @@ async def mention_allvc(client, message):
         ):
             is_admin = True
     if not is_admin:
-        return await message.reply("๏ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ʙᴀʙʏ, ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴛᴀɢ ᴍᴇᴍʙᴇʀs. ")
+        return await message.reply("๏ YÖNETİCİ DEĞİLSİNİZ BEBEĞİM, SADECE YÖNETİCİLER ÜYELERİ ETİKETLEYEBİLİR. ")
     if chat_id in spam_chats:
-        return await message.reply("๏ ᴘʟᴇᴀsᴇ ᴀᴛ ғɪʀsᴛ sᴛᴏᴘ ʀᴜɴɴɪɴɢ ᴍᴇɴᴛɪᴏɴ ᴘʀᴏᴄᴇss...")
+        return await message.reply("๏ LÜTFEN İLK ÖNCE ÇALIŞAN İŞLEMİ DURDURUN...")
     spam_chats.append(chat_id)
     usrnum = 0
     usrtxt = ""
@@ -207,7 +207,7 @@ async def mention_allvc(client, message):
 @app.on_message(filters.command(["gmstop", "gnstop", "cancle"]))
 async def cancel_spam(client, message):
     if not message.chat.id in spam_chats:
-        return await message.reply("๏ ᴄᴜʀʀᴇɴᴛʟʏ ɪ'ᴍ ɴᴏᴛ ᴛᴀɢɢɪɴɢ ʙᴀʙʏ.")
+        return await message.reply("๏ BU KOMUTLAR SADECE GRUP İÇERİSİNDE KULLANILABİLİR.")
     is_admin = False
     try:
         participant = await client.get_chat_member(message.chat.id, message.from_user.id)
@@ -220,11 +220,11 @@ async def cancel_spam(client, message):
         ):
             is_admin = True
     if not is_admin:
-        return await message.reply("๏ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴅᴍɪɴ ʙᴀʙʏ, ᴏɴʟʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴛᴀɢ ᴍᴇᴍʙᴇʀs.")
+        return await message.reply("๏ YÖNETİCİ DEĞİLSİNİZ BEBEĞİM, SADECE YÖNETİCİLER ÜYELERİ ETİKETLEYEBİLİR.")
     else:
         try:
             spam_chats.remove(message.chat.id)
         except:
             pass
-        return await message.reply("๏ ᴍᴇɴᴛɪᴏɴ ᴘʀᴏᴄᴇss sᴛᴏᴘᴘᴇᴅ ๏")
+        return await message.reply("๏ ETİKETLEME SÜRECİ DURDURULDU ๏")
 

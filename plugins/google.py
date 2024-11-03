@@ -10,17 +10,17 @@ from SafoneAPI import SafoneAPI
 @app.on_message(filters.command(["google", "gle"]))
 async def google(bot, message):
     if len(message.command) < 2 and not message.reply_to_message:
-        await message.reply_text("Example:\n\n`/google lord ram`")
+        await message.reply_text("ÖRNEĞİN:\n\n`/google ATATÜRK KİMDİR? ")
         return
 
     if message.reply_to_message and message.reply_to_message.text:
         user_input = message.reply_to_message.text
     else:
         user_input = " ".join(message.command[1:])
-    b = await message.reply_text("**Sᴇᴀʀᴄʜɪɴɢ ᴏɴ Gᴏᴏɢʟᴇ....**")
+    b = await message.reply_text("**GOOGLE ÜZERİNDEN ARAMA YAPILIYOR....**")
     try:
         a = search(user_input, advanced=True)
-        txt = f"Search Query: {user_input}\n\nresults"
+        txt = f"ARAMA SORGUSU: {user_input}\n\nSONUÇLAR"
         for result in a:
             txt += f"\n\n[❍ {result.title}]({result.url})\n<b>{result.description}</b>"
         await b.edit(
@@ -35,14 +35,14 @@ async def google(bot, message):
 @app.on_message(filters.command(["app", "apps"]))
 async def app(bot, message):
     if len(message.command) < 2 and not message.reply_to_message:
-        await message.reply_text("Example:\n\n`/app Free Fire`")
+        await message.reply_text("ÖRNEĞİN:\n\n`/app ÜCRETSİZ UYGULAMALAR")
         return
 
     if message.reply_to_message and message.reply_to_message.text:
         user_input = message.reply_to_message.text
     else:
         user_input = " ".join(message.command[1:])
-    cbb = await message.reply_text("**Sᴇᴀʀᴄʜɪɴɢ ᴏɴ Pʟᴀʏ Sᴛᴏʀᴇ....**")
+    cbb = await message.reply_text("**PLAYSTORE ÜZERİNDEN ARAMA YAPILIYOR....**")
     a = await SafoneAPI().apps(user_input, 1)
     b = a["results"][0]
     icon = b["icon"]

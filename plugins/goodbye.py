@@ -36,9 +36,9 @@ async def handle_left_member(member, chat):
             await chat.ban_member(member.id)
             await app.send_message(
                 chat.id,
-                f"{member.mention} ᴡᴀs ɢʟᴏʙᴀʟʟʏ ʙᴀɴɴᴇᴅ, ᴀɴᴅ ɢᴏᴛ ʀᴇᴍᴏᴠᴇᴅ,"
-                + " ɪғ ʏᴏᴜ ᴛʜɪɴᴋ ᴛʜɪs ɪs ᴀ ғᴀʟsᴇ ɢʙᴀɴ, ʏᴏᴜ ᴄᴀɴ ᴀᴘᴘᴇᴀʟ"
-                + " ғᴏʀ ᴛʜɪs ʙᴀɴ ɪɴ sᴜᴘᴘᴏʀᴛ ᴄʜᴀᴛ",
+                f"{member.mention} GLOBAL BANLANDI, VE SİLİNDİ,"
+                + " BUNUN YANLIŞ BİR GBAN OLDUĞUNU DÜŞÜNÜYORSANIZ, İTİRAZ EDEBİLİRSİNİZ"
+                + " GBAN İÇİN DESTEK GRUBUNA YAZINIZ",
             )
             return
         if member.is_bot:
@@ -119,12 +119,12 @@ async def send_left_message(chat: Chat, user_id: int, delete: bool = False):
 @app.on_message(filters.command("setgoodbye") & ~filters.private)
 @adminsOnly("can_change_info")
 async def set_goodbye_func(_, message):
-    usage = "Yᴏᴜ ɴᴇᴇᴅ ᴛᴏ ʀᴇᴘʟʏ ᴛᴏ ᴀ ᴛᴇxᴛ, ɢɪғ ᴏʀ ᴘʜᴏᴛᴏ ᴛᴏ sᴇᴛ ɪᴛ ᴀs ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇ.\n\nᴏᴛᴇs: ᴄᴀᴘᴛɪᴏɴ ʀᴇǫᴜɪʀᴇᴅ ғᴏʀ ɢɪғ ᴀɴᴅ ᴘʜᴏᴛᴏ."
+    usage = "BİR METİN, GIF VEYA FOTOĞRAFI VEDA MESAJI OLARAK AYARLAMAK İÇİN YANITLAMANIZ GEREKİYOR.\n\nNOTLAR: GIF VE FOTOĞRAF İÇİN BAŞLIK GEREKLİDİR."
     key = InlineKeyboardMarkup(
         [
             [
                 InlineKeyboardButton(
-                    text="More Help",
+                    text="YARDIM",
                     url=f"t.me/{app.username}?start=greetings",
                 )
             ],
@@ -166,16 +166,16 @@ async def set_goodbye_func(_, message):
         if raw_text:
             await set_goodbye(chat_id, goodbye, raw_text, file_id)
             return await message.reply_text(
-                "ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇ ʜᴀs ʙᴇᴇɴ sᴜᴄᴄᴇssғᴜʟʟʏ sᴇᴛ."
+                "VEDA MESAJI BAŞARIYLA OLUŞTURULDU."
             )
         else:
             return await message.reply_text(
-                "Wʀᴏɴɢ ғᴏʀᴍᴀᴛᴛɪɴɢ, ᴄʜᴇᴄᴋ ᴛʜᴇ ʜᴇʟᴘ sᴇᴄᴛɪᴏɴ.\n\n**Usᴀsɢᴇ:**\nTᴛᴇxᴛ: `Text`\nᴛᴇxᴛ + ʙᴜᴛᴛᴏɴs: `Text ~ Buttons`",
+                "YANLIŞ BİÇİMLENDİRME, YARDIM BÖLÜMÜNÜ KONTROL EDİN.\n\n**KULLANIM:**\nTᴛᴇxᴛ: `Text`\nᴛᴇxᴛ + ʙᴜᴛᴛᴏɴs: `Text ~ Buttons`",
                 reply_markup=key,
             )
     except UnboundLocalError:
         return await message.reply_text(
-            "**Oɴʟʏ Tᴇxᴛ, Gɪғ ᴀɴᴅ Pʜᴏᴛᴏ ᴡᴇʟᴄᴏᴍᴇ ᴍᴇssᴀɢᴇ ᴀʀᴇ sᴜᴘᴘᴏʀᴛᴇᴅ.**"
+            "**YALNIZCA METİN, GIF VE FOTOĞRAF HOŞGELDİNİZ MESAJINDA DESTEKLENİR.**"
         )
 
 
@@ -184,7 +184,7 @@ async def set_goodbye_func(_, message):
 async def del_goodbye_func(_, message):
     chat_id = message.chat.id
     await del_goodbye(chat_id)
-    await message.reply_text("Gᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇ ʜᴀs ʙᴇᴇɴ Dᴇʟᴇᴛᴇᴅ Sᴜᴄᴄᴇssғᴜʟʟʏ")
+    await message.reply_text("VEDA MESAJI BAŞARIYLA SİLİNDİ...")
 
 
 @app.on_message(filters.command("goodbye") & ~filters.private)
@@ -201,33 +201,33 @@ async def goodbye(client, message: Message):
             success = await set_greetings_on(message.chat.id, "goodbye")
             if success:
                 await message.reply_text(
-                    "I'ʟʟ ʙᴇ sᴀʏɪɴɢ ɢᴏᴏᴅʙʏᴇ ᴛᴏ ᴀɴʏ ʟᴇᴀᴠᴇʀs ғʀᴏᴍ ɴᴏᴡ ᴏɴ!"
+                    "GRUPTAN ÇIKAN HERKESE VEDA EDECEĞİM!"
                 )
             else:
-                await message.reply_text("Fᴀɪʟᴇᴅ ᴛᴏ ᴇɴᴀʙʟᴇ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇs.")
+                await message.reply_text("VEDA MESAJI AKTİF EDİLEMEDİ.")
 
         elif action in ["off", "disable", "n", "no", "false", "f"]:
             success = await set_greetings_off(message.chat.id, "goodbye")
             if success:
-                await message.reply_text("I'ʟʟ sᴛᴀʏ ǫᴜɪᴇᴛ ᴡʜᴇɴ ᴘᴇᴏᴘʟᴇ ʟᴇᴀᴠᴇ.")
+                await message.reply_text("GRUPTAN ÇIKAN OLDUĞU ZAMAN SESSİZ KALACAĞIM.")
             else:
-                await message.reply_text("Fᴀɪʟᴇᴅ ᴛᴏ ᴅɪsᴀʙʟᴇ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇs.")
+                await message.reply_text("VEDA MESAJI KAPATILAMADI.")
 
         else:
             await message.reply_text(
-                "Iɴᴠᴀʟɪᴅ ᴄᴏᴍᴍᴀɴᴅ. Pʟᴇᴀsᴇ ᴜsᴇ:\n"
-                "/goodbye - Tᴏ ɢᴇᴛ ʏᴏᴜʀ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇ\n"
-                "/goodbye [on, y, true, enable, t] - ᴛᴏ ᴛᴜʀɴ ᴏɴ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇs\n"
-                "/goodbye [off, n, false, disable, f, no] - ᴛᴏ ᴛᴜʀɴ ᴏғғ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇs\n"
-                "/delgoodbye ᴏʀ /deletegoodbye ᴛᴏ ᴅᴇʟᴛᴇ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇ ᴀɴᴅ ᴛᴜʀɴ ᴏғғ ɢᴏᴏᴅʙʏᴇ"
+                "GEÇERSİZ KOMUT. LÜTFEN BUNLARI KULLANIN:\n"
+                "/goodbye - VEDA MESAJINI AYARLAYIN\n"
+                "/goodbye [on, y, true, enable, t] - VEDA MESAJINI AKTİF ET \n"
+                "/goodbye [off, n, false, disable, f, no] - VEDA MESAJINI KAPAT\n"
+                "/delgoodbye ᴏʀ /deletegoodbye VEDA MESAJINI SİLER"
             )
     else:
         await message.reply_text(
-            "Iɴᴠᴀʟɪᴅ ᴄᴏᴍᴍᴀɴᴅ. Pʟᴇᴀsᴇ ᴜsᴇ:\n"
-            "/goodbye - Tᴏ ɢᴇᴛ ʏᴏᴜʀ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇ\n"
-            "/goodbye [on, y, true, enable, t] - ᴛᴏ ᴛᴜʀɴ ᴏɴ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇs\n"
-            "/goodbye [off, n, false, disable, f, no] - ᴛᴏ ᴛᴜʀɴ ᴏғғ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇs\n"
-            "/delgoodbye ᴏʀ /deletegoodbye ᴛᴏ ᴅᴇʟᴛᴇ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇ ᴀɴᴅ ᴛᴜʀɴ ᴏғғ ɢᴏᴏᴅʙʏᴇ"
+            "GEÇERSİZ KOMUT. LÜTFEN BUNLARI KULLANIN:\n"
+                "/goodbye - VEDA MESAJINI AYARLAYIN\n"
+                "/goodbye [on, y, true, enable, t] - VEDA MESAJINI AKTİF ET \n"
+                "/goodbye [off, n, false, disable, f, no] - VEDA MESAJINI KAPAT\n"
+                "/delgoodbye ᴏʀ /deletegoodbye VEDA MESAJINI SİLER"
         )
 
 
@@ -236,20 +236,20 @@ async def get_goodbye_func(_, message):
     goodbye, raw_text, file_id = await get_goodbye(chat.id)
     if not raw_text:
         return await message.reply_text(
-            "Dɪᴅ Yᴏᴜ ʀᴇᴍᴇᴍʙᴇʀ ᴛʜᴀᴛ ʏᴏᴜ ʜᴀᴠᴇ sᴇᴛ's ᴀɴᴛ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇ"
+            "VEDA MESAJINI AYARLADIĞINIZI HATIRLIYOR MUSUNUZ?"
         )
     if not message.from_user:
-        return await message.reply_text("Yᴏᴜ'ʀᴇ ᴀɴᴏɴ, ᴄᴀɴ'ᴛ sᴇɴᴅ ɢᴏᴏᴅʙʏᴇ ᴍᴇssᴀɢᴇ.")
+        return await message.reply_text("ANONİMSİN, VEDA MESAJI GÖNDERİLEMİYOR.")
 
     await send_left_message(chat, message.from_user.id)
     is_grt = await is_greetings_on(chat.id, "goodbye")
     text = None
     if is_grt:
-        text = "Tʀᴜᴇ"
+        text = "DOĞRU"
     else:
-        text = "Fᴀʟsᴇ"
+        text = "YANLIŞ"
     await message.reply_text(
-        f'I ᴀᴍ ᴄᴜʀʀᴇɴᴛʟʏ sᴀʏɪɴɢ ɢᴏᴏᴅʙʏᴇ ᴛᴏ ᴜsᴇʀs :- {text}\nGᴏᴏᴅʙʏᴇ: {goodbye}\n\nғɪʟᴇ_ɪᴅ: `{file_id}`\n\n`{raw_text.replace("`", "")}`'
+        f'ŞU AN DA KULLANICILARA VEDA MESAJI GÖNDERİYORUM :- {text}\n VEDA MESAJI: {goodbye}\n\nDOSYA ID: `{file_id}`\n\n`{raw_text.replace("`", "")}`'
     )
 
 

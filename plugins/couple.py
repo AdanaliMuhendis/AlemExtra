@@ -49,7 +49,7 @@ today = get_today_date()
 async def ctest(_, message):
     cid = message.chat.id
     if message.chat.type == ChatType.PRIVATE:
-        return await message.reply_text("Tʜɪs ᴄᴏᴍᴍᴀɴᴅ ᴏɴʟʏ ᴡᴏʀᴋs ɪɴ ɢʀᴏᴜᴘs.")
+        return await message.reply_text("Bu Komut Sadece Grup İçerisinde Kullanılır.")
 
     p1_path = "downloads/pfp.png"
     p2_path = "downloads/pfp1.png"
@@ -120,11 +120,11 @@ async def ctest(_, message):
             img.save(test_image_path)
 
             TXT = f"""
-**Tᴏᴅᴀʏ's ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ:
+**Bu Gün Ki Sevgililer:
 
 {N1} + {N2} = 💚
 
-Nᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow}!!**
+Gelecek Günün Sevgilileri {tomorrow}!!**
             """
 
             await message.reply_photo(
@@ -134,7 +134,7 @@ Nᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorro
                     [
                         [
                             InlineKeyboardButton(
-                                text="Aᴅᴅ ᴍᴇ 🌋",
+                                text="EKLE 🌋",
                                 url=f"https://t.me/{app.username}?startgroup=true",
                             )
                         ]
@@ -158,11 +158,11 @@ Nᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorro
             c2_name = (await app.get_users(c2_id)).first_name
 
             TXT = f"""
-**Tᴏᴅᴀʏ's ᴄᴏᴜᴘʟᴇ ᴏғ ᴛʜᴇ ᴅᴀʏ 🎉:
+**Bu Gün Ki Sevgililer 🎉:
 
 [{c1_name}](tg://openmessage?user_id={c1_id}) + [{c2_name}](tg://openmessage?user_id={c2_id}) = ❣️
 
-Nᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorrow}!!**
+Gelecek Günün Sevgilileri {tomorrow}!!**
             """
             await message.reply_photo(
                 b,
@@ -171,7 +171,7 @@ Nᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorro
                     [
                         [
                             InlineKeyboardButton(
-                                text="Aᴅᴅ ᴍᴇ🌋",
+                                text="EKLE🌋",
                                 url=f"https://t.me/{app.username}?startgroup=true",
                             )
                         ]
@@ -189,4 +189,4 @@ Nᴇxᴛ ᴄᴏᴜᴘʟᴇs ᴡɪʟʟ ʙᴇ sᴇʟᴇᴄᴛᴇᴅ ᴏɴ {tomorro
             os.remove(test_image_path)
             os.remove(cppic_path)
         except Exception as cleanup_error:
-            print(f"Error during cleanup: {cleanup_error}")
+            print(f"Temizleme sırasında hata: {cleanup_error}")

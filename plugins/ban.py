@@ -121,11 +121,11 @@ async def remove_warns(chat_id: int, name: str) -> bool:
 async def kickFunc(_, message: Message):
     user_id, reason = await extract_user_and_reason(message)
     if not user_id:
-        return await message.reply_text("ɪ ᴄᴀɴ'ᴛ ғɪɴᴅ ᴛʜᴀᴛ ᴜsᴇʀ")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
     if user_id == app.id:
-        return await message.reply_text("ɪ ᴄᴀɴ'ᴛ ᴋɪᴄᴋ ᴍʏsᴇʟғ, ɪ ᴄᴀɴ ʟᴇᴀᴠᴇ ɪғ ʏᴏᴜ ᴡᴀɴᴛ.")
+        return await message.reply_text("Gözden Düşerim Ama Gönülden Asla :), Cidden Gitmesimi İstiyor musun?")
     if user_id in SUDOERS:
-        return await message.reply_text("ʏᴏᴜ ᴡᴀɴɴᴀ ᴋɪᴄᴋ ᴛʜᴇ ᴇʟᴇᴠᴀᴛᴇᴅ ᴏɴᴇ ?")
+        return await message.reply_text("Varoş Kopkeee Ne Haddine Birini Atmak :), YENİDEN DÜŞÜN!")
     if user_id in [
         member.user.id
         async for member in app.get_chat_members(
@@ -133,13 +133,13 @@ async def kickFunc(_, message: Message):
         )
     ]:
         return await message.reply_text(
-            "ɪ ᴄᴀɴ'ᴛ ᴋɪᴄᴋ ᴀɴ ᴀᴅᴍɪɴ, ʏᴏᴜ ᴋɴᴏᴡ ᴛʜᴇ ʀᴜʟᴇs, ʏᴏᴜ ᴋɴᴏᴡ ᴛʜᴇ ʀᴜʟᴇs, sᴏ ᴅᴏ ɪ "
+            "Ben bir yöneticiye yetki kullanmam :), Kuralları bildiğini düşünüyorum, KURALLARI BİLİYORSUN!, BENDE BİLİYORUMMM "
         )
     mention = (await app.get_users(user_id)).mention
     msg = f"""
-**ᴋɪᴄᴋᴇᴅ ᴜsᴇʀ:** {mention}
-**ᴋɪᴄᴋᴇᴅ ʙʏ:** {message.from_user.mention if message.from_user else 'ᴀɴᴏɴᴍᴏᴜs'}
-**ʀᴇᴀsᴏɴ:** {reason or 'ɴᴏ ʀᴇᴀsᴏɴ ᴘʀᴏᴠɪᴅᴇᴅ'}"""
+**Çıkarılan Kullanıcı:** {mention}
+**Çıkaran:** {message.from_user.mention if message.from_user else 'ᴀɴᴏɴᴍᴏᴜs'}
+**Sebep:** {reason or 'Sebep Göster'}"""
     await message.chat.ban_member(user_id)
     replied_message = message.reply_to_message
     if replied_message:
@@ -163,11 +163,11 @@ async def banFunc(_, message: Message):
     user_id, reason = await extract_user_and_reason(message, sender_chat=True)
 
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
     if user_id == app.id:
-        return await message.reply_text("I can't ban myself, i can leave if you want.")
+        return await message.reply_text("Gruptan Banladın Peki Gönlünden Nasıl Banlayacaksın :), Gerçekten Gitmemi İstiyor musun?")
     if user_id in SUDOERS:
-        return await message.reply_text("You Wanna Ban The Elevated One?, RECONSIDER!")
+        return await message.reply_text("Varoş Kopkeee Ne Haddine Banlamak :), YENİDEN DÜŞÜN!")
     if user_id in [
         member.user.id
         async for member in app.get_chat_members(
@@ -175,7 +175,7 @@ async def banFunc(_, message: Message):
         )
     ]:
         return await message.reply_text(
-            "I can't ban an admin, You know the rules, so do i."
+            "Ben bir yöneticiye yetki kullanmam :), Kuralları bildiğini düşünüyorum, KURALLARI BİLİYORSUN!, BENDE BİLİYORUMMM "
         )
 
     try:
@@ -188,8 +188,8 @@ async def banFunc(_, message: Message):
         )
 
     msg = (
-        f"**Banned User:** {mention}\n"
-        f"**Banned By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
+        f"**Banlanan Kullanıcı:** {mention}\n"
+        f"**Banlayan:** {message.from_user.mention if message.from_user else 'Anon'}\n"
     )
     if message.command[0][0] == "s":
         await message.reply_to_message.delete()
@@ -199,9 +199,9 @@ async def banFunc(_, message: Message):
         time_value = split[0]
         temp_reason = split[1] if len(split) > 1 else ""
         temp_ban = await time_converter(message, time_value)
-        msg += f"**Banned For:** {time_value}\n"
+        msg += f"**Yasaklanma Sebebi:** {time_value}\n"
         if temp_reason:
-            msg += f"**Reason:** {temp_reason}"
+            msg += f"**Sebep:** {temp_reason}"
         with suppress(AttributeError):
             if len(time_value[:-1]) < 3:
                 await message.chat.ban_member(user_id, until_date=temp_ban)
@@ -210,10 +210,10 @@ async def banFunc(_, message: Message):
                     message = replied_message
                 await message.reply_text(msg)
             else:
-                await message.reply_text("You can't use more than 99")
+                await message.reply_text("99'dan fazlasını kullanamazsınız")
         return
     if reason:
-        msg += f"**Reason:** {reason}"
+        msg += f"**Sebep:** {reason}"
     await message.chat.ban_member(user_id)
     replied_message = message.reply_to_message
     if replied_message:
@@ -234,10 +234,10 @@ async def unban_func(_, message: Message):
     reply = message.reply_to_message
     user_id = await extract_user(message)
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
 
     if reply and reply.sender_chat and reply.sender_chat != message.chat.id:
-        return await message.reply_text("You cannot unban a channel")
+        return await message.reply_text("Kanaldan Banlanmadı.")
 
     await message.chat.unban_member(user_id)
     umention = (await app.get_users(user_id)).mention
@@ -257,15 +257,15 @@ async def unban_func(_, message: Message):
 async def promoteFunc(_, message: Message):
     user_id = await extract_user(message)
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
 
     bot = (await app.get_chat_member(message.chat.id, app.id)).privileges
     if user_id == app.id:
-        return await message.reply_text("I can't promote myself.")
+        return await message.reply_text("Kendimi Yüceltemiyorum :)")
     if not bot:
-        return await message.reply_text("I'm not an admin in this chat.")
+        return await message.reply_text("Bu sohbette yönetici değilim.")
     if not bot.can_promote_members:
-        return await message.reply_text("I don't have enough permissions")
+        return await message.reply_text("Yeterli iznim yok")
 
     umention = (await app.get_users(user_id)).mention
 
@@ -283,7 +283,7 @@ async def promoteFunc(_, message: Message):
                 can_manage_video_chats=bot.can_manage_video_chats,
             ),
         )
-        return await message.reply_text(f"Fully Promoted! {umention}")
+        return await message.reply_text(f"En Yetkili Benim :) {umention}")
 
     await message.chat.promote_member(
         user_id=user_id,
@@ -298,7 +298,7 @@ async def promoteFunc(_, message: Message):
             can_manage_video_chats=bot.can_manage_video_chats,
         ),
     )
-    await message.reply_text(f"Promoted! {umention}")
+    await message.reply_text(f"Yetkili ! {umention}")
 
 
 # Demote Member
@@ -311,7 +311,7 @@ async def purgeFunc(_, message: Message):
     await message.delete()
 
     if not repliedmsg:
-        return await message.reply_text("Reply to a message to purge from.")
+        return await message.reply_text("Purge İçin Herhangi Bİr Mesajı Yanıtlayın")
 
     cmd = message.command
     if len(cmd) > 1 and cmd[1].isdigit():
@@ -354,7 +354,7 @@ async def purgeFunc(_, message: Message):
 @adminsOnly("can_delete_messages")
 async def deleteFunc(_, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply To A Message To Delete It")
+        return await message.reply_text("Mesajı Yanıtlayarak Silin")
     await message.reply_to_message.delete()
     await message.delete()
 
@@ -364,12 +364,12 @@ async def deleteFunc(_, message: Message):
 async def demote(_, message: Message):
     user_id = await extract_user(message)
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
     if user_id == app.id:
-        return await message.reply_text("I can't demote myself.")
+        return await message.reply_text("Yetkilerimi Atamıyorum. Kölesi Oldum :)")
     if user_id in SUDOERS:
         return await message.reply_text(
-            "You wanna demote the elevated one?, RECONSIDER!"
+            "Bir Yöneticinin Yetkisini Düşürmek mi İstiyorsunuz?, YENİDEN DÜŞÜNÜN!"
         )
     try:
         member = await app.get_chat_member(message.chat.id, user_id)
@@ -388,9 +388,9 @@ async def demote(_, message: Message):
                 ),
             )
             umention = (await app.get_users(user_id)).mention
-            await message.reply_text(f"Demoted! {umention}")
+            await message.reply_text(f"Yetki Düş! {umention}")
         else:
-            await message.reply_text("The person you mentioned is not an admin.")
+            await message.reply_text("Bahsettiğiniz kişi yönetici değil.")
     except Exception as e:
         await message.reply_text(e)
 
@@ -403,12 +403,12 @@ async def demote(_, message: Message):
 async def pin(_, message: Message):
     if message.command[0] == "unpinall":
         return await message.reply_text(
-            "Aʀᴇ ʏᴏᴜ sᴜʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴜɴᴘɪɴ ᴀʟʟ ᴍᴇssᴀɢᴇs?",
+            "Sabitlenen Mesajların Hepsini Kaldırmak mı İstiyorsu??",
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
-                        InlineKeyboardButton(text="ʏᴇs", callback_data="unpin_yes"),
-                        InlineKeyboardButton(text="ɴᴏ", callback_data="unpin_no"),
+                        InlineKeyboardButton(text="Evet", callback_data="unpin_yes"),
+                        InlineKeyboardButton(text="Hayır", callback_data="unpin_no"),
                     ],
                 ]
             ),
@@ -419,10 +419,10 @@ async def pin(_, message: Message):
 async def callback_query_handler(_, query: CallbackQuery):
     if query.data == "unpin_yes":
         await app.unpin_all_chat_messages(query.message.chat.id)
-        return await query.message.edit_text("Aʟʟ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇs ʜᴀᴠᴇ ʙᴇᴇɴ ᴜɴᴘɪɴɴᴇᴅ.")
+        return await query.message.edit_text("Bütün Sabit Mesajları Kaldırıldı...")
     elif query.data == "unpin_no":
         return await query.message.edit_text(
-            "Uɴᴘɪɴ ᴏғ ᴀʟʟ ᴘɪɴɴᴇᴅ ᴍᴇssᴀɢᴇs ʜᴀs ʙᴇᴇɴ ᴄᴀɴᴄᴇʟʟᴇᴅ."
+            "Bütün Sabit Mesajları Kaldırılması İptal Edildi..."
         )
 
 
@@ -430,7 +430,7 @@ async def callback_query_handler(_, query: CallbackQuery):
 @adminsOnly("can_pin_messages")
 async def pin(_, message: Message):
     if not message.reply_to_message:
-        return await message.reply_text("Reply to a message to pin/unpin it.")
+        return await message.reply_text("Mesajı Cevapla ve pin/unpin yaz!")
     r = message.reply_to_message
     if message.command[0][0] == "u":
         await r.unpin()
@@ -443,7 +443,7 @@ async def pin(_, message: Message):
         f"Pinned [this]({r.link}) message.",
         disable_web_page_preview=True,
     )
-    msg = "Please check the pinned message: ~ " + f"[Check, {r.link}]"
+    msg = "Lütfen Sabitlenen Mesajı Kontrol Et ~ " + f"[Check, {r.link}]"
     filter_ = dict(type="text", data=msg)
     await save_filter(message.chat.id, "~pinned", filter_)
 
@@ -456,11 +456,11 @@ async def pin(_, message: Message):
 async def mute(_, message: Message):
     user_id, reason = await extract_user_and_reason(message)
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
     if user_id == app.id:
-        return await message.reply_text("I can't mute myself.")
+        return await message.reply_text("Kendime Mute Atamam !")
     if user_id in SUDOERS:
-        return await message.reply_text("You wanna mute the elevated one?, RECONSIDER!")
+        return await message.reply_text("Varoş Kopkeee Ne Haddine Mutelemek :), YENİDEN DÜŞÜN!")
     if user_id in [
         member.user.id
         async for member in app.get_chat_members(
@@ -468,22 +468,22 @@ async def mute(_, message: Message):
         )
     ]:
         return await message.reply_text(
-            "I can't mute an admin, You know the rules, so do i."
+            "Ben bir yöneticiye yetki kullanmam :), Kuralları bildiğini düşünüyorum, KURALLARI BİLİYORSUN!, BENDE BİLİYORUMMM "
         )
     mention = (await app.get_users(user_id)).mention
     keyboard = ikb({"🚨  Unmute  🚨": f"unmute_{user_id}"})
     msg = (
-        f"**Muted User:** {mention}\n"
-        f"**Muted By:** {message.from_user.mention if message.from_user else 'Anon'}\n"
+        f"**Sessize Alınan Kullanıcı:** {mention}\n"
+        f"**Sessize Alan:** {message.from_user.mention if message.from_user else 'Anon'}\n"
     )
     if message.command[0] == "tmute":
         split = reason.split(None, 1)
         time_value = split[0]
         temp_reason = split[1] if len(split) > 1 else ""
         temp_mute = await time_converter(message, time_value)
-        msg += f"**Muted For:** {time_value}\n"
+        msg += f"**Sessize Alınma Sebebi:** {time_value}\n"
         if temp_reason:
-            msg += f"**Reason:** {temp_reason}"
+            msg += f"**Sebep:** {temp_reason}"
         try:
             if len(time_value[:-1]) < 3:
                 await message.chat.restrict_member(
@@ -496,12 +496,12 @@ async def mute(_, message: Message):
                     message = replied_message
                 await message.reply_text(msg, reply_markup=keyboard)
             else:
-                await message.reply_text("You can't use more than 99")
+                await message.reply_text("99'dan fazla olamaz")
         except AttributeError:
             pass
         return
     if reason:
-        msg += f"**Reason:** {reason}"
+        msg += f"**Sebep:** {reason}"
     await message.chat.restrict_member(user_id, permissions=ChatPermissions())
     replied_message = message.reply_to_message
     if replied_message:
@@ -514,13 +514,13 @@ async def mute(_, message: Message):
 async def unmute(_, message: Message):
     user_id = await extract_user(message)
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
     await message.chat.unban_member(user_id)
     umention = (await app.get_users(user_id)).mention
     replied_message = message.reply_to_message
     if replied_message:
         message = replied_message
-    await message.reply_text(f"Unmuted! {umention}")
+    await message.reply_text(f"Sessiz Değil! {umention}")
 
 
 @app.on_message(filters.command(["warn", "swarn"]) & ~filters.private & ~BANNED_USERS)
@@ -529,12 +529,12 @@ async def warn_user(_, message: Message):
     user_id, reason = await extract_user_and_reason(message)
     chat_id = message.chat.id
     if not user_id:
-        return await message.reply_text("ɪ ᴄᴀɴᴛ ғɪɴᴅ ᴛʜᴀᴛ ᴜsᴇʀ")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
     if user_id == app.id:
-        return await message.reply_text("ɪ ᴄᴀɴ'ᴛ ᴡᴀʀɴ ᴍʏsᴇʟғ, ɪ ᴄᴀɴ ʟᴇᴀᴠᴇ ɪғ ʏᴏᴜ ᴡᴀɴᴛ.")
+        return await message.reply_text("Bana Değil Kendine Uyarı Ver, Bak Giderm Bi Daha Gelmem HIAAA !")
     if user_id in SUDOERS:
         return await message.reply_text(
-            "ɪ ᴄᴀɴ'ᴛ ᴡᴀʀɴ ᴍʏ ᴍᴀɴᴀɢᴇʀ's, ʙᴇᴄᴀᴜsᴇ ʜᴇ ᴍᴀɴᴀɢᴇ ᴍᴇ!"
+            "Ben bir yöneticiye yetki kullanmam :), Maşa Varken Ben Niye Uğraşayım..."
         )
     if user_id in [
         member.user.id
@@ -543,14 +543,14 @@ async def warn_user(_, message: Message):
         )
     ]:
         return await message.reply_text(
-            "ɪ ᴄᴀɴ'ᴛ ᴡᴀʀɴ ᴀɴ ᴀᴅᴍɪɴ, ʏᴏᴜ ᴋɴᴏᴡ ᴛʜᴇ ʀᴜʟᴇs sᴏ ᴅᴏ ɪ."
+            "Ben bir yöneticiye yetki kullanmam :), Maşa Varken Ben Niye Uğraşayım..."
         )
     user, warns = await asyncio.gather(
         app.get_users(user_id),
         get_warn(chat_id, await int_to_alpha(user_id)),
     )
     mention = user.mention
-    keyboard = ikb({"🚨  ʀᴇᴍᴏᴠᴇ ᴡᴀʀɴ  🚨": f"unwarn_{user_id}"})
+    keyboard = ikb({"🚨  Uyarı Silindi  🚨": f"unwarn_{user_id}"})
     if warns:
         warns = warns["warns"]
     else:
@@ -560,15 +560,15 @@ async def warn_user(_, message: Message):
         await app.delete_user_history(message.chat.id, user_id)
     if warns >= 2:
         await message.chat.ban_member(user_id)
-        await message.reply_text(f"ɴᴜᴍʙᴇʀ ᴏғ ᴡᴀʀɴs ᴏғ {mention} ᴇxᴄᴇᴇᴅᴇᴅ, ʙᴀɴɴᴇᴅ!")
+        await message.reply_text(f"Uyarı Sayısı {mention} Aşıldı, BANLANDI!")
         await remove_warns(chat_id, await int_to_alpha(user_id))
     else:
         warn = {"warns": warns + 1}
         msg = f"""
-**ᴡᴀʀɴᴇᴅ ᴜsᴇʀ:** {mention}
-**ᴡᴀʀɴᴇᴅ ʙʏ:** {message.from_user.mention if message.from_user else 'ᴀɴᴏɴᴍᴏᴜs'}
-**ʀᴇᴀsᴏɴ :** {reason or 'ɴᴏ ʀᴇᴀsᴏɴ ᴘʀᴏᴠᴏᴅᴇᴅ'}
-**ᴡᴀʀɴs:** {warns + 1}/3"""
+**Uyarılan Kullanıcı:** {mention}
+**Uayaran Kişi:** {message.from_user.mention if message.from_user else 'ᴀɴᴏɴᴍᴏᴜs'}
+**Sebep :** {reason or 'Sebep Belirtilmedi'}
+**Uyarılar:** {warns + 1}/3"""
         replied_message = message.reply_to_message
         if replied_message:
             message = replied_message
@@ -584,8 +584,8 @@ async def remove_warning(_, cq: CallbackQuery):
     permission = "can_restrict_members"
     if permission not in permissions:
         return await cq.answer(
-            "ʏᴏᴜ ᴅᴏɴ'ᴛ ʜᴀᴠᴇ ᴇɴᴏᴜɢʜ ᴘᴇʀᴍɪssɪᴏɴs ᴛᴏ ᴘᴇʀғᴏʀᴍ ᴛʜɪs ᴀᴄᴛɪᴏɴ\n"
-            + f"ᴘᴇʀᴍɪssɪᴏɴ ɴᴇᴇᴅᴇᴅ: {permission}",
+            "Yeterince Yetkiye Sahip Değilsiniz \n"
+            + f"Gerekli İzinler: {permission}",
             show_alert=True,
         )
     user_id = cq.data.split("_")[1]
@@ -593,12 +593,12 @@ async def remove_warning(_, cq: CallbackQuery):
     if warns:
         warns = warns["warns"]
     if not warns or warns == 0:
-        return await cq.answer("ᴜsᴇʀ ʜᴀs ɴᴏ ᴡᴀʀɴɪɴɢs.")
+        return await cq.answer("Kullanıcının Uyarısı Yok")
     warn = {"warns": warns - 1}
     await add_warn(chat_id, await int_to_alpha(user_id), warn)
     text = cq.message.text.markdown
     text = f"~~{text}~~\n\n"
-    text += f"__ᴡᴀʀɴ ʀᴇᴍᴏᴠᴇᴅ ʙʏ {from_user.mention}__"
+    text += f"Uyarıyı Silen Kişi {from_user.mention}__"
     await cq.message.edit(text)
 
 
@@ -607,17 +607,17 @@ async def remove_warning(_, cq: CallbackQuery):
 async def remove_warnings(_, message: Message):
     user_id = await extract_user(message)
     if not user_id:
-        return await message.reply_text("I can't find that user.")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
     mention = (await app.get_users(user_id)).mention
     chat_id = message.chat.id
     warns = await get_warn(chat_id, await int_to_alpha(user_id))
     if warns:
         warns = warns["warns"]
     if warns == 0 or not warns:
-        await message.reply_text(f"{mention} ʜᴀs ɴᴏ ᴡᴀʀɴɪɴɢs.")
+        await message.reply_text(f"{mention} Hiç Bir Uyarısı Yok...")
     else:
         await remove_warns(chat_id, await int_to_alpha(user_id))
-        await message.reply_text(f"ʀᴇᴍᴏᴠᴇᴅ ᴡᴀʀɴɪɴɢs ᴏғ {mention}.")
+        await message.reply_text(f"Uyarılar Slilindi... {mention}")
 
 
 @app.on_message(filters.command("warns") & ~filters.private & ~BANNED_USERS)
@@ -625,14 +625,14 @@ async def remove_warnings(_, message: Message):
 async def check_warns(_, message: Message):
     user_id = await extract_user(message)
     if not user_id:
-        return await message.reply_text("ɪ ᴄᴀɴ'ᴛ ғɪɴᴅ ᴛʜᴀᴛ ᴜsᴇʀ.")
+        return await message.reply_text("Kullanıcı Bulunamadı...")
     warns = await get_warn(message.chat.id, await int_to_alpha(user_id))
     mention = (await app.get_users(user_id)).mention
     if warns:
         warns = warns["warns"]
     else:
-        return await message.reply_text(f"{mention} ʜᴀs ɴᴏ ᴡᴀʀɴɪɴɢs.")
-    return await message.reply_text(f"{mention} ʜᴀs {warns}/3 ᴡᴀʀɴɪɴɢs")
+        return await message.reply_text(f"{mention} Hiç Bir Uyarısı Yok...")
+    return await message.reply_text(f"{mention} :) {warns}/3 Uyarısı Oldu")
 
 
 from pyrogram import filters
@@ -647,7 +647,7 @@ async def ban_members(chat_id, user_id, bot_permission, total_members, msg):
     banned_count = 0
     failed_count = 0
     ok = await msg.reply_text(
-        f"Total members found: {total_members}\n**Started Banning..**"
+        f"Bulunan Toplam Üye: {total_members}\n**Banlamaya Başladım...**"
     )
     
     while failed_count <= 30:
@@ -663,7 +663,7 @@ async def ban_members(chat_id, user_id, bot_permission, total_members, msg):
                     if banned_count % 5 == 0:
                         try:
                             await ok.edit_text(
-                                f"Banned {banned_count} members out of {total_members}"
+                                f"Banlanan {banned_count} Toplam Kullanıcı {total_members}"
                             )
                         except Exception:
                             pass  # Ignore if edit fails
@@ -677,7 +677,7 @@ async def ban_members(chat_id, user_id, bot_permission, total_members, msg):
             await asyncio.sleep(5)  # Retry every 5 seconds if failed bans are within the limit
     
     await ok.edit_text(
-        f"Total banned: {banned_count}\nFailed bans: {failed_count}\nStopped as failed bans exceeded limit."
+        f"Toplam Banlanan: {banned_count}\nBanlama Hatası: {failed_count}\nBanlama Durduruldu Sınır Aşıldı !"
     )
 
 
@@ -698,7 +698,7 @@ async def ban_all(_, msg):
     
     else:
         await msg.reply_text(
-            "Either I don't have the right to restrict users or you are not in sudo users"
+            "Ya benim kullanıcıları kısıtlama hakkım yok ya da sen yetkili kullanıcılardan değilsin"
         )
 
 
@@ -714,7 +714,7 @@ async def unbanme(client, message):
     try:
         # Check if the command has a group ID argument
         if len(message.command) < 2:
-            await message.reply_text("Please provide the group ID.")
+            await message.reply_text("Lütfen Grup ID Belirtin...")
             return
 
         group_id = message.command[1]
@@ -727,7 +727,7 @@ async def unbanme(client, message):
             try:
                 member = await client.get_chat_member(group_id, message.from_user.id)
                 if member.status == "member":
-                    await message.reply_text(f"You are already unbanned in that group. You can join now by clicking here: {await get_group_link(client, group_id)}")
+                    await message.reply_text(f"Bu gruptaki yasağınız zaten kaldırıldı. Buraya tıklayarak hemen katılabilirsiniz: {await get_group_link(client, group_id)}")
                     return
             except UserNotParticipant:
                 pass  # The user is not a participant, proceed to unban
@@ -735,13 +735,13 @@ async def unbanme(client, message):
             # Send unban success message
             try:
                 group_link = await get_group_link(client, group_id)
-                await message.reply_text(f"I unbanned you in the group. You can join now by clicking here: {group_link}")
+                await message.reply_text(f"Gruptaki yasağını kaldırdım. Buraya tıklayarak hemen katılabilirsiniz: {group_link}")
             except InviteHashExpired:
-                await message.reply_text(f"I unbanned you in the group, but I couldn't provide a link to the group.")
+                await message.reply_text(f"Gruptaki yasağınızı kaldırdım ancak grubun bağlantısını sağlayamadım.")
         except ChatAdminRequired:
-            await message.reply_text("I am not an admin in that group, so I cannot unban you.")
+            await message.reply_text("Ben o grupta yönetici değilim, dolayısıyla yasağınızı kaldıramam.")
     except Exception as e:
-        await message.reply_text(f"An error occurred: {e}")
+        await message.reply_text(f"Bir hata oluştu: {e}")
 
 async def get_group_link(client, group_id):
     # Try to get the group link or username

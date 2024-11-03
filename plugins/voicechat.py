@@ -26,7 +26,7 @@ async def vc_members(client, message):
         language = await get_lang(message.chat.id)
         _ = get_string(language)
     except:
-        _ = get_string("en")
+        _ = get_string("tr")
     msg = await message.reply_text(_["V_C_1"])
     userbot = await get_assistant(message.chat.id)
     TEXT = ""

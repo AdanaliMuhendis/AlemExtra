@@ -40,18 +40,18 @@ async def approval_command(client, message):
             switch = "automatic"
             mdbutton = "ᴍᴀɴɴᴜᴀʟ"
         buttons = {
-            "Tᴜʀɴ ᴏғғ": "approval_off",
+            "Kapalı": "approval_off",
             f"{mdbutton}": f"approval_{switch}",
         }
         keyboard = ikb(buttons, 1)
         await message.reply(
-            "**Aᴜᴛᴏᴀᴘᴘʀᴏᴠᴀʟ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ: Eɴᴀʙʟᴇᴅ.**", reply_markup=keyboard
+            "**Bu Chat İçin Otomatik Onay: Aktif**", reply_markup=keyboard
         )
     else:
-        buttons = {"Tᴜʀɴ ᴏɴ ": "approval_on"}
+        buttons = {"Açık ": "approval_on"}
         keyboard = ikb(buttons, 1)
         await message.reply(
-            "**Aᴜᴛᴏᴀᴘᴘʀᴏᴠᴀʟ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ: Dɪsᴀʙʟᴇᴅ.**", reply_markup=keyboard
+            "**Bu Chat İçin Otomatik Onay: Devredışı**", reply_markup=keyboard
         )
 
 
@@ -64,7 +64,7 @@ async def approval_cb(client, cb):
     if permission not in permissions:
         if from_user.id not in SUDOERS:
             return await cb.answer(
-                f"You don't have the required permission.\n Permission: {permission}",
+                f"Gerekli izne sahip değilsiniz.\n İzin: {permission}",
                 show_alert=True,
             )
     command_parts = cb.data.split("_", 1)
@@ -72,10 +72,10 @@ async def approval_cb(client, cb):
     if option == "off":
         if await approvaldb.count_documents({"chat_id": chat_id}) > 0:
             approvaldb.delete_one({"chat_id": chat_id})
-            buttons = {"ᴛᴜʀɴ ᴏɴ": "approval_on"}
+            buttons = {"Açık": "approval_on"}
             keyboard = ikb(buttons, 1)
             return await cb.edit_message_text(
-                "**Aᴜᴛᴏᴀᴘᴘʀᴏᴠᴀʟ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ: Dɪsᴀʙʟᴇᴅ.**",
+                "**Bu Chat İçin Otomatik Onay: Devredışı**",
                 reply_markup=keyboard,
             )
     if option == "on":
@@ -94,20 +94,20 @@ async def approval_cb(client, cb):
     )
     chat = await approvaldb.find_one({"chat_id": chat_id})
     mode = smallcap(chat["mode"])
-    buttons = {"ᴛᴜʀɴ ᴏғғ": "approval_off", f"{mode}": f"approval_{switch}"}
+    buttons = {"Kapalı": "approval_off", f"{mode}": f"approval_{switch}"}
     keyboard = ikb(buttons, 1)
     await cb.edit_message_text(
-        "**Aᴜᴛᴏᴀᴘᴘʀᴏᴠᴀʟ ғᴏʀ ᴛʜɪs ᴄʜᴀᴛ: Eɴᴀʙʟᴇᴅ.**", reply_markup=keyboard
+        "**Bu Chat İçin Otomatik Onay: Aktif**", reply_markup=keyboard
     )
 
 
 @app.on_message(filters.command("approveall") & filters.group)
 @adminsOnly("can_restrict_members")
 async def approve_all(client, message):
-    a = await message.reply_text("ᴡᴀɪᴛ.....")
+    a = await message.reply_text("Bekle.....")
     chat_id = message.chat.id
     await app.approve_all_chat_join_requests(chat_id)
-    await a.edit("ɪғ ᴀɴʏ ᴜsᴇʀ ᴀʀᴇ ᴡᴀɪᴛɪɴɢ ғᴏʀ ᴀᴘᴘʀᴏᴠᴇᴅ sᴏ ɪ ᴀᴍ ᴀᴘᴘʀᴏᴠᴇᴅ ʜɪᴍ")
+    await a.edit("Herhangi Bir Kullanıcı Onaylanmayı Beklerse 'BEN ONAYLARIM' ")
     await approvaldb.update_one(
         {"chat_id": chat_id},
         {"$set": {"pending_users": []}},
@@ -123,9 +123,9 @@ async def clear_pending_command(client, message):
         {"$set": {"pending_users": []}},
     )
     if result.modified_count > 0:
-        await message.reply_text("Cleared pending users.")
+        await message.reply_text("Bekleyen kullanıcılar temizlendi.")
     else:
-        await message.reply_text("No pending users to clear.")
+        await message.reply_text("Temizlenecek bekleyen kullanıcı yok.")
 
 
 @app.on_chat_join_request(filters.group)
@@ -153,7 +153,7 @@ async def accept(client, message: ChatJoinRequest):
                     "ᴅᴇᴄʟɪɴᴇ": f"manual_decline_{user.id}",
                 }
                 keyboard = ikb(buttons, int(2))
-                text = f"**ᴜsᴇʀ: {user.mention} ʜᴀs sᴇɴᴅ ᴀ ʀᴇǫᴜᴇsᴛ ᴛᴏ ᴊᴏɪɴ ᴏᴜʀ  ɢʀᴏᴜᴘ. Aɴʏ ᴀᴅᴍɪɴs ᴄᴀɴ ᴀᴄᴄᴇᴘᴛ ᴏʀ ᴅᴇᴄʟɪɴᴇ ɪᴛ.**"
+                text = f"**Kullanıcı: {user.mention} GRUBUMUZA KATILMAK İÇİN TALEP GÖNDERDİ. HERHANGİ BİR YÖNETİCİ BUNU KABUL EDEBİLİR VEYA REDDEDER.**"
                 admin_data = [
                     i
                     async for i in app.get_chat_members(
@@ -177,7 +177,7 @@ async def manual(app, cb):
     if permission not in permissions:
         if from_user.id not in SUDOERS:
             return await cb.answer(
-                f"You don't have the required permission.\n Permission: {permission}",
+                f"Gerekli izne sahip değilsiniz.\n İzin: {permission}",
                 show_alert=True,
             )
     datas = cb.data.split("_", 2)
@@ -188,7 +188,7 @@ async def manual(app, cb):
             await app.approve_chat_join_request(chat_id=chat.id, user_id=id)
         except UserAlreadyParticipant:
             await cb.answer(
-                "Usᴇʀ Is Aᴘᴘʀᴏᴠᴇᴅ ɪɴ Yᴏᴜʀ Gʀᴏᴜᴘ Bʏ AɴʏOɴᴇ",
+                "KULLANICI GRUBUNUZDA HERKES TARAFINDAN ONAYLANDI",
                 show_alert=True,
             )
             return await cb.message.delete()
@@ -199,7 +199,7 @@ async def manual(app, cb):
         except Exception as e:
             if "messages.HideChatJoinRequest" in str(e):
                 await cb.answer(
-                    "Usᴇʀ Is Aᴘᴘʀᴏᴠᴇᴅ ɪɴ Yᴏᴜʀ Gʀᴏᴜᴘ Bʏ AɴʏOɴᴇ",
+                    "KULLANICI GRUBUNUZDA HERKES TARAFINDAN ONAYLANDI",
                     show_alert=True,
                 )
 

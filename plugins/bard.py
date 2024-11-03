@@ -9,7 +9,7 @@ from SafoneAPI import SafoneAPI
 async def bard(bot, message):
     if len(message.command) < 2 and not message.reply_to_message:
         await message.reply_text(
-            "Example:\n\n`/bard tell me about lord rama and sita in brief `"
+            "Örnek:\n\n`/bard bana lord rama ve sita'dan kısaca bahset`"
         )
         return
 

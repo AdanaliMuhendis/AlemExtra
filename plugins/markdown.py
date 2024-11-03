@@ -12,7 +12,7 @@ async def mkdwnhelp(_, m: Message):
         [
             [
                 InlineKeyboardButton(
-                    text="Click Here!",
+                    text="BURAYA TIKLA!",
                     url=f"http://t.me/{app.username}?start=mkdwn_help",
                 )
             ]

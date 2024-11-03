@@ -25,7 +25,7 @@ async def purge_user_func(_, message: Message):
         # Step 1: Userbot ko Admin banana
         userbot = await get_assistant(message.chat.id)
         if not userbot:
-            return await message.reply_text("Userbot assistant not found or unable to promote.")
+            return await message.reply_text("Userbot asistanı bulunamadı veya tanıtılamıyor.")
 
         try:
             # Admin privileges dena, specifically 'delete_messages' permission
@@ -35,17 +35,17 @@ async def purge_user_func(_, message: Message):
                 privileges=ChatPrivileges(
                     can_manage_chat=True))
             
-            ok = await message.reply_text("Userbot has been promoted to admin with delete messages permission.")
+            ok = await message.reply_text("Userbot, mesajları silme izniyle yönetici konumuna yükseltildi...")
             await ok.delete()
         except Exception as e:
-            return await message.reply_text(f"Failed to promote userbot: {str(e)}")
+            return await message.reply_text(f"Yetki Verilemedi: {str(e)}")
         
         # Step 2: User identify karna (reply se, mention se, ya userID se)
         if message.reply_to_message:
             user = message.reply_to_message.from_user.id
         else:
             if len(message.command) < 2:
-                return await message.reply_text("Please reply to a user or provide a username/user ID.")
+                return await message.reply_text("Lütfen bir kullanıcıya yanıt verin veya bir username/user ID sağlayın...")
 
             user_input = message.command[1]
             if user_input.isdigit():  # User ID diya gaya hai
@@ -54,7 +54,7 @@ async def purge_user_func(_, message: Message):
                 try:
                     user = (await app.get_users(user_input)).id
                 except Exception as e:
-                    return await message.reply_text(f"Error: {str(e)}")
+                    return await message.reply_text(f"Hata: {str(e)}")
 
         # Step 3: Specific user ke messages ko delete karna
         chat_id = message.chat.id
@@ -72,7 +72,7 @@ async def purge_user_func(_, message: Message):
                         revoke=True,  # For both sides
                     )
                 except Exception as e:
-                    return await message.reply_text(f"Failed to delete messages: {str(e)}")
+                    return await message.reply_text(f"Mesajlar silinemedi: {str(e)}")
                 message_ids = []
 
         # Agar kuch messages bache hain to unko bhi delete karein
@@ -84,21 +84,21 @@ async def purge_user_func(_, message: Message):
                     revoke=True,
                 )
             except Exception as e:
-                return await message.reply_text(f"Failed to delete remaining messages: {str(e)}")
+                return await message.reply_text(f"Kalan mesajlar silinemedi: {str(e)}")
 
-        await message.reply_text(f"All messages from user {user} have been deleted.")
+        await message.reply_text(f"Kullanıcıdan gelen tüm mesajlar {user} silindi.")
     
     except Exception as e:
-        await message.reply_text(f"An unexpected error occurred: {str(e)}")
+        await message.reply_text(f"Beklenmeyen bir hata oluştu: {str(e)}")
 @app.on_message(filters.command(["deleteallgroup", "deleteallgroupmsg", "delallgroupmessage", "cleangroupmsg"]) & filters.group)
 async def delete_all_group_messages(client, message):
     try:
         if not await is_admin_or_sudo(client, message.chat.id, message.from_user.id):
-            await message.reply_text("๏ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴛᴏ ᴘᴇʀғᴏʀᴍ ᴛʜɪs ᴄᴏᴍᴍᴀɴᴅ.")
+            await message.reply_text("๏ BU EMRİ GERÇEKLEŞTİRMEYE YETKİNİZ YOK!")
             return
 
         if len(message.command) == 1:
-            await message.reply_text("๏ ᴘʟᴇᴀsᴇ ᴘʀᴏᴠɪᴅᴇ ᴀ ɢʀᴏᴜᴘ ID ᴏʀ ᴜsᴇʀɴᴀᴍᴇ.")
+            await message.reply_text("๏ LÜTFEN BİR GRUP BELİRTİN ID VEYA ᴜsᴇʀɴᴀᴍᴇ.")
             return
 
         group_input = message.command[1]
@@ -109,19 +109,19 @@ async def delete_all_group_messages(client, message):
                 chat = await app.get_chat(group_input)
                 chat_id = chat.id
         except Exception as e:
-            await message.reply_text(f"๏ ᴇʀʀᴏʀ: {str(e)}")
+            await message.reply_text(f"๏ HATA: {str(e)}")
             return
 
         keyboard = InlineKeyboardMarkup(
             [
-                [InlineKeyboardButton("ᴄᴏɴғɪʀᴍ ᴅᴇʟᴇᴛɪᴏɴ", callback_data=f"confirm_delete_group:{chat_id}")],
-                [InlineKeyboardButton("ᴄᴀɴᴄᴇʟ", callback_data="cancel_delete")]
+                [InlineKeyboardButton("SİLMEYİ ONAYLA", callback_data=f"confirm_delete_group:{chat_id}")],
+                [InlineKeyboardButton("İPTAL", callback_data="cancel_delete")]
             ]
         )
-        await message.reply_text("๏ ᴀʀᴇ ʏᴏᴜ sᴜʀᴇ ʏᴏᴜ ᴡᴀɴᴛ ᴛᴏ ᴅᴇʟᴇᴛᴇ ᴀʟʟ ᴍᴇssᴀɢᴇs ғʀᴏᴍ ᴛʜᴇ ɢʀᴏᴜᴘ?", reply_markup=keyboard)
+        await message.reply_text("๏ GRUPTAN TÜM MESAJLARI SİLMEK İSTEDİĞİNİZDEN EMİN MİSİNİZ?", reply_markup=keyboard)
 
     except Exception as e:
-        await message.reply_text(f"๏ ᴇʀʀᴏʀ: {str(e)}")
+        await message.reply_text(f"๏ HATA: {str(e)}")
 
 
 @app.on_callback_query(filters.regex(r"^confirm_delete_group:(\d+)"))
@@ -129,21 +129,21 @@ async def confirm_delete_group(client, callback_query):
     try:
         chat_id = int(callback_query.data.split(":")[1])
         if not await is_admin_or_sudo(client, chat_id, callback_query.from_user.id):
-            await callback_query.answer("๏ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴ.", show_alert=True)
+            await callback_query.answer("๏ BU BUTONU KULLANMAYA YETKİNİZ YOK !", show_alert=True)
             return
         await delete_messages(client, callback_query.message, chat_id=chat_id)
-        await callback_query.answer("๏ ᴅᴇʟᴇᴛɪᴏɴ ᴄᴏɴғɪʀᴍᴇᴅ.", show_alert=True)
+        await callback_query.answer("๏ SİLME ONAYLANDI", show_alert=True)
     except Exception as e:
-        await callback_query.message.edit(f"๏ ᴇʀʀᴏʀ: {str(e)}")
+        await callback_query.message.edit(f"๏ HATA: {str(e)}")
 
 
 @app.on_callback_query(filters.regex(r"cancel_delete"))
 async def cancel_delete(client, callback_query):
     try:
         if not await is_admin_or_sudo(client, callback_query.message.chat.id, callback_query.from_user.id):
-            await callback_query.answer("๏ ʏᴏᴜ ᴀʀᴇ ɴᴏᴛ ᴀᴜᴛʜᴏʀɪᴢᴇᴅ ᴛᴏ ᴜsᴇ ᴛʜɪs ʙᴜᴛᴛᴏɴ.", show_alert=True)
+            await callback_query.answer("๏ BU BUTONU KULLANMAYA YETKİNİZ YOK !", show_alert=True)
             return
-        await callback_query.message.edit("๏ ᴅᴇʟᴇᴛɪᴏɴ ᴄᴀɴᴄᴇʟᴇᴅ.")
-        await callback_query.answer("๏ ᴄᴀɴᴄᴇʟʟᴇᴅ.", show_alert=True)
+        await callback_query.message.edit("๏ SİLME ONAYLANDI")
+        await callback_query.answer("๏ İPTAL EDİLDİ.", show_alert=True)
     except Exception as e:
-        await callback_query.message.edit(f"๏ ᴇʀʀᴏʀ: {str(e)}")
+        await callback_query.message.edit(f"๏ HATA: {str(e)}")

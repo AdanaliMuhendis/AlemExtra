@@ -9,7 +9,7 @@ from AlemMuzik.utils.database import add_served_chat, get_assistant
 
 
 start_txt = """**
-✪ 𝗪𝗲𝗹𝗰𝗼𝗺𝗲 𝘁𝗼 𝗖𝗵𝗮𝗺𝗽𝘂 𝗥𝗲𝗽𝗼𝘀 ✪
+✪ HOŞ GELDİN ALEM REPO ✪
 
 ➲ ᴇᴀsʏ ʜᴇʀᴏᴋᴜ ᴅᴇᴘʟᴏʏᴍᴇɴᴛ ✰  
 ➲ ɴᴏ ʙᴀɴ ɪssᴜᴇs ✰  
@@ -26,23 +26,23 @@ start_txt = """**
 async def start(_, msg):
     buttons = [
         [ 
-          InlineKeyboardButton("ᴀᴅᴅ ᴍᴇ", url=f"https://t.me/{app.username}?startgroup=true")
+          InlineKeyboardButton("Ekle Beni", url=f"https://t.me/{app.username}?startgroup=true")
         ],
         [
-          InlineKeyboardButton("ᴄʜᴧᴍᴘᴜ", url="https://t.me/AdanaliMuhendis"),
-          InlineKeyboardButton("sʜɪᴠᴀɴsʜᴜ", url="https://t.me/TheShivanshu"),
+          InlineKeyboardButton("HAYATİ", url="https://t.me/AdanaliMuhendis"),
+          InlineKeyboardButton("Alem", url="https://t.me/SOHBETALEMİ"),
           ],
                [
-                InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/itsmeshivanshu"),
+                InlineKeyboardButton("ᴏᴡɴᴇʀ", url="https://t.me/ADANALİMUHENDİS"),
 
 ],
 [
-              InlineKeyboardButton("ᴍᴜsɪᴄ", url=f"https://github.com/AdanaliMuhendis/camp"),
-              InlineKeyboardButton("sᴛʀɪɴɢ", url=f"https://github.com/TheChampu/ChampuString"),
+              InlineKeyboardButton("ᴍᴜsɪᴄ", url=f"https://github.com/AdanaliMuhendis/AlemMuzik"),
+              InlineKeyboardButton("-", url=f"-"),
               ],
               [
-              InlineKeyboardButton("ᴍᴀɴᴀɢᴍᴇɴᴛ", url=f"https://github.com/TheChampu/ChampuManagment"),
-InlineKeyboardButton("ᴄʜᴀᴛʙᴏᴛ", url=f"https://github.com/TheChampu/ChatBot"),
+              InlineKeyboardButton("ᴍᴀɴᴀɢᴍᴇɴᴛ", url=f"-"),
+InlineKeyboardButton("ᴄʜᴀᴛʙᴏᴛ", url=f"-"),
 ]]
     
     reply_markup = InlineKeyboardMarkup(buttons)

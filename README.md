@@ -1,4 +1,4 @@
-# Extra Plugins For [AlemMuzik](https://github.com/AdanaliMuhendis/AlemMuzik)
+# Extra Plugins For [AlemMuzik](https://github.com/AdanaliMuhendis/AlemExtra)
 
 
 ## Deployment for [AlemMuzik](https://github.com/AdanaliMuhendis/AlemMuzik)
